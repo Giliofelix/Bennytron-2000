@@ -73,7 +73,6 @@ namespace Bennytron_2000
             this.btnMaterialEstructural = new System.Windows.Forms.Button();
             this.btnGranTotal = new System.Windows.Forms.Button();
             this.cmbMicroinversor = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -117,6 +116,7 @@ namespace Bennytron_2000
             // txtCapacidad
             // 
             this.txtCapacidad.Location = new System.Drawing.Point(148, 69);
+            this.txtCapacidad.MaxLength = 7;
             this.txtCapacidad.Name = "txtCapacidad";
             this.txtCapacidad.Size = new System.Drawing.Size(100, 20);
             this.txtCapacidad.TabIndex = 1;
@@ -506,7 +506,7 @@ namespace Bennytron_2000
             this.lblMaterialElectrico.Name = "lblMaterialElectrico";
             this.lblMaterialElectrico.Size = new System.Drawing.Size(128, 23);
             this.lblMaterialElectrico.TabIndex = 0;
-            this.lblMaterialElectrico.Text = "$ 0.00";
+            this.lblMaterialElectrico.Text = "0.00";
             this.lblMaterialElectrico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMaterialEstructural
@@ -518,7 +518,7 @@ namespace Bennytron_2000
             this.lblMaterialEstructural.Name = "lblMaterialEstructural";
             this.lblMaterialEstructural.Size = new System.Drawing.Size(128, 23);
             this.lblMaterialEstructural.TabIndex = 0;
-            this.lblMaterialEstructural.Text = "$ 0.00";
+            this.lblMaterialEstructural.Text = "0.00";
             this.lblMaterialEstructural.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMaterialFerretero
@@ -530,7 +530,7 @@ namespace Bennytron_2000
             this.lblMaterialFerretero.Name = "lblMaterialFerretero";
             this.lblMaterialFerretero.Size = new System.Drawing.Size(128, 23);
             this.lblMaterialFerretero.TabIndex = 0;
-            this.lblMaterialFerretero.Text = "$ 0.00";
+            this.lblMaterialFerretero.Text = "0.00";
             this.lblMaterialFerretero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGranTotal
@@ -542,7 +542,7 @@ namespace Bennytron_2000
             this.lblGranTotal.Name = "lblGranTotal";
             this.lblGranTotal.Size = new System.Drawing.Size(128, 23);
             this.lblGranTotal.TabIndex = 0;
-            this.lblGranTotal.Text = "$ 0.00";
+            this.lblGranTotal.Text = "0.00";
             this.lblGranTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMaterialEstructural
@@ -576,22 +576,11 @@ namespace Bennytron_2000
             this.cmbMicroinversor.Text = "Modelo del microinversor";
             this.cmbMicroinversor.SelectedIndexChanged += new System.EventHandler(this.cmbMicroinversor_SelectedIndexChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(332, 91);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 529);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGranTotal);
             this.Controls.Add(this.btnMaterialEstructural);
             this.Controls.Add(this.btnMaterialElectrico);
@@ -641,7 +630,7 @@ namespace Bennytron_2000
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "BENNYTRON 2000 - AV Energie Software";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -694,7 +683,6 @@ namespace Bennytron_2000
         private System.Windows.Forms.Button btnMaterialEstructural;
         private System.Windows.Forms.Button btnGranTotal;
         private System.Windows.Forms.ComboBox cmbMicroinversor;
-        private System.Windows.Forms.Button button1;
     }
 }
 

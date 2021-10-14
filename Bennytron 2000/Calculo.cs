@@ -59,9 +59,9 @@ namespace Bennytron_2000
         #region Estáticos
         public static string Clasificacion(int capacidadKw)
         {
-            int capacidadw = capacidadKw * 1000;
+            int capacidadw = capacidadKw;
 
-            int C173 = 30000, C174 = 2500000, C175 = 600000;
+            int C173 = 30, C174 = 250, C175 = 600;
 
             string A173 = "Casa y microempresa",
                 A174 = "Pequeña empresa",

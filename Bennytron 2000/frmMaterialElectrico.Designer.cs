@@ -255,8 +255,8 @@ namespace Bennytron_2000
             this.lblP8.Name = "lblP8";
             this.lblP8.Size = new System.Drawing.Size(93, 23);
             this.lblP8.TabIndex = 0;
-            this.lblP8.Text = "$ 0.00";
-            this.lblP8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblP8.Text = "0.00";
+            this.lblP8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblP45
             // 
@@ -265,8 +265,8 @@ namespace Bennytron_2000
             this.lblP45.Name = "lblP45";
             this.lblP45.Size = new System.Drawing.Size(93, 23);
             this.lblP45.TabIndex = 0;
-            this.lblP45.Text = "$ 100,000,000.00";
-            this.lblP45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblP45.Text = "100,000,000.00";
+            this.lblP45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblN10
             // 
@@ -295,8 +295,8 @@ namespace Bennytron_2000
             this.lblP19.Name = "lblP19";
             this.lblP19.Size = new System.Drawing.Size(93, 23);
             this.lblP19.TabIndex = 0;
-            this.lblP19.Text = "$ 0.00";
-            this.lblP19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblP19.Text = "0.00";
+            this.lblP19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblN11
             // 
@@ -928,8 +928,8 @@ namespace Bennytron_2000
             this.lblP25.Name = "lblP25";
             this.lblP25.Size = new System.Drawing.Size(93, 23);
             this.lblP25.TabIndex = 0;
-            this.lblP25.Text = "$ 0.00";
-            this.lblP25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblP25.Text = "0.00";
+            this.lblP25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 

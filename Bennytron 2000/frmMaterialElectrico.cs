@@ -65,19 +65,19 @@ namespace Bennytron_2000
                 DataTable dtEt3 = new DataTable("CableadoYProteccionesEt3");
 
                 #region define las columnas
-                dtEt2.Columns.Add("", System.Type.GetType("System.String"));
+                dtEt2.Columns.Add("Descripción", System.Type.GetType("System.String"));
                 dtEt2.Columns.Add("Max5 (v)", System.Type.GetType("System.String"));
                 dtEt2.Columns.Add("Max I (A)", System.Type.GetType("System.String"));
-                dtEt2.Columns.Add("Cantidad (pzas)", System.Type.GetType("System.String"));
-                dtEt2.Columns.Add("Cantidad (metros)", System.Type.GetType("System.String"));
-                dtEt2.Columns.Add("Costo unit ($)", System.Type.GetType("System.String"));
-                dtEt2.Columns.Add("", System.Type.GetType("System.String"));
+                dtEt2.Columns.Add("Cant (pzas)", System.Type.GetType("System.String"));
+                dtEt2.Columns.Add("Cant (mts)", System.Type.GetType("System.String"));
+                dtEt2.Columns.Add("Cost unit ($)", System.Type.GetType("System.String"));
 
+                dtEt3.Columns.Add("Descripción", System.Type.GetType("System.String"));
                 dtEt3.Columns.Add("Max5 (v)", System.Type.GetType("System.String"));
                 dtEt3.Columns.Add("Max I (A)", System.Type.GetType("System.String"));
-                dtEt3.Columns.Add("Cantidad (pzas)", System.Type.GetType("System.String"));
-                dtEt3.Columns.Add("Cantidad (metros)", System.Type.GetType("System.String"));
-                dtEt3.Columns.Add("Costo unit ($)", System.Type.GetType("System.String"));
+                dtEt3.Columns.Add("Cant (pzas)", System.Type.GetType("System.String"));
+                dtEt3.Columns.Add("Cant (mts)", System.Type.GetType("System.String"));
+                dtEt3.Columns.Add("Cost unit ($)", System.Type.GetType("System.String"));
                 #endregion
 
                 lblB13.Text = _calculo.UsarMicroinversor ? "Microinversor" : "Inversor";
@@ -190,8 +190,9 @@ namespace Bennytron_2000
                 drEt2[3] = lblO30.Text;
                 drEt2[4] = "";
                 drEt2[5] = tableroMetalico.Costo;
-                dtEt2.Rows.Add(drEt2); drEt2 = dtEt2.NewRow();
+                dtEt2.Rows.Add(drEt2); 
 
+                drEt2 = dtEt2.NewRow();
                 drEt2[0] = "ITM principal " + lblO38.Text;  //"ITM principal 15"; 
                 drEt2[1] = "";
                 drEt2[2] = lblO38.Text;
@@ -199,13 +200,15 @@ namespace Bennytron_2000
                 drEt2[4] = "0";
                 drEt2[5] = "0";
                 drEt2[5] = Calculo.PrecioProteccionITM("ITM principal " + lblO38.Text);
+                dtEt2.Rows.Add(drEt2);
 
-                dgvEt2.DataSource = dtEt2;
+                dgvSubEt2.DataSource = dtEt2;
+                dgvSubEt2.AllowUserToAddRows = false;
                 #endregion
 
                 #region Calculo costos
 
-                decimal costoModulos = _calculo.NumeroDeModulos * (decimal)_calculo.Modulo.Precio;
+                decimal costoModulos = _calculo.NumeroDeModulos * _calculo.Modulo.Precio;
 
                 decimal costoMicroinversores = 0;
                 if (_calculo.UsarMicroinversor)
@@ -219,9 +222,16 @@ namespace Bennytron_2000
 
                 // ITM principal cantidad por precio
 
+                // costoElectrico = costoModulos + costoMicroinversores;
+
                 decimal costoTotal = costoModulos + costoMicroinversores;
 
-                lblP45.Text = costoTotal.ToString("0.00");
+                // osto total = electrico + feretero + estructural
+
+                lblP8.Text = costoModulos.ToString("N");
+                lblP19.Text = costoMicroinversores.ToString("N");
+                lblP25.Text = (0).ToString("N");
+                lblP45.Text = costoTotal.ToString("N");
 
                 #endregion
             }

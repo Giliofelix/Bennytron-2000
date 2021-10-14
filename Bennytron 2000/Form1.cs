@@ -30,6 +30,9 @@ namespace Bennytron_2000
                 if (txtCapacidad.Text != "")
                     lblClasificacion.Text = Calculo.Clasificacion(int.Parse(txtCapacidad.Text));
 
+                // Actualizar potencia
+                //lblPotencia.Text = Calculo.Potencia(cmbModulo.Text).ToString();
+
                 Modulo modulo = new Modulo(_nucleo, cmbModulo.Text);
                 lblPotencia.Text = modulo.CapacidadW.ToString();
 
@@ -80,11 +83,11 @@ namespace Bennytron_2000
                     costoTotalMaterialElectrico += micro.Precio * totalMicros;
                 }
 
-                lblMaterialElectrico.Text = costoTotalMaterialElectrico.ToString("#.00");
+                lblMaterialElectrico.Text = costoTotalMaterialElectrico.ToString("#,#.00");
 
                 decimal granTotal = costoTotalMaterialElectrico;
 
-                lblGranTotal.Text = granTotal.ToString("#.00");
+                lblGranTotal.Text = granTotal.ToString("#,#.00");
             }
             catch (Exception ex)
             {
@@ -134,6 +137,7 @@ namespace Bennytron_2000
                 }
                 */
 
+                /*
                 cmbEncajonado.SelectedIndex = 0;
                 if (cmbMicroinversor.Items.Count > 0)
                     cmbMicroinversor.SelectedIndex = 0;
@@ -141,18 +145,21 @@ namespace Bennytron_2000
                 cmbTemperatura.SelectedIndex = 0;
                 cmbTipoInstalacion.SelectedIndex = 0;
                 cmbTransformador.SelectedIndex = 0;
-                cmbUsarMicroinversor.SelectedIndex = 0;
+                cmbUsarMicroinversor.SelectedIndex = 0;*/
 
                 // Pre cargar selecciones último uso:
                 txtNombreProyecto.Text = _nucleo.Parametro("txtNombreProyecto.Text");
                 txtCapacidad.Text = _nucleo.Parametro("txtCapacidad.Text");
                 txtUbicacion.Text = _nucleo.Parametro("txtUbicacion.Text");
-                cmbModulo.SelectedText = _nucleo.Parametro("cmbModulo.SelectedText");
-                cmbUsarMicroinversor.SelectedText = _nucleo.Parametro("cmbUsarMicroinversor.SelectedText");
-                cmbTipoInstalacion.SelectedText = _nucleo.Parametro("cmbTipoInstalacion.SelectedText");
-                cmbEncajonado.SelectedText = _nucleo.Parametro("cmbEncajonado.SelectedText");
-                cmbTemperatura.SelectedText = _nucleo.Parametro("cmbTemperatura.SelectedText");
-                cmbTransformador.SelectedText = _nucleo.Parametro("cmbTransformador.SelectedText");
+                cmbModulo.Text = _nucleo.Parametro("cmbModulo.SelectedText");
+                cmbUsarMicroinversor.Text = _nucleo.Parametro("cmbUsarMicroinversor.SelectedText");
+                if (cmbUsarMicroinversor.Text == "Sí")
+                    cmbUsarMicroinversor.SelectedIndex = 0;
+                cmbMicroinversor.Text = _nucleo.Parametro("cmbMicroinversor.SelectedText");
+                cmbTipoInstalacion.Text = _nucleo.Parametro("cmbTipoInstalacion.SelectedText");
+                cmbEncajonado.Text = _nucleo.Parametro("cmbEncajonado.SelectedText");
+                cmbTemperatura.Text = _nucleo.Parametro("cmbTemperatura.SelectedText");
+                cmbTransformador.Text = _nucleo.Parametro("cmbTransformador.SelectedText");
             }
             catch (Exception ex)
             {
@@ -273,6 +280,7 @@ namespace Bennytron_2000
 
                 _nucleo.ModificarParametro("cmbModulo.SelectedText", cmbModulo.SelectedText);
                 _nucleo.ModificarParametro("cmbUsarMicroinversor.SelectedText", cmbUsarMicroinversor.SelectedText);
+                _nucleo.ModificarParametro("cmbMicroinversor.SelectedText", cmbMicroinversor.SelectedText);
                 _nucleo.ModificarParametro("cmbTipoInstalacion.SelectedText", cmbTipoInstalacion.SelectedText);
                 _nucleo.ModificarParametro("cmbEncajonado.SelectedText", cmbEncajonado.SelectedText);
                 _nucleo.ModificarParametro("cmbTemperatura.SelectedText", cmbTemperatura.SelectedText);
