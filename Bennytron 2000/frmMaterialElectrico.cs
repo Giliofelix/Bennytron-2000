@@ -207,9 +207,9 @@ namespace Bennytron_2000
 
                 decimal costoModulos = _calculo.NumeroDeModulos * (decimal)_calculo.Modulo.Precio;
 
-                decimal costoMicroinversores
+                decimal costoMicroinversores = 0;
                 if (_calculo.UsarMicroinversor)
-                    decimal costoMicroinversores = totalMicros * (decimal)_calculo.Microinversor.Precio;
+                    costoMicroinversores = totalMicros * (decimal)_calculo.Microinversor.Precio;
 
                 // TODO: metros de calbe correcto por precio del cable correcto
 
