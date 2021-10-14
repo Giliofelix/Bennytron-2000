@@ -13,7 +13,7 @@ namespace Bennytron_2000
     public partial class Form1 : Form
     {
         public Nucleo _nucleo;
-
+//Hola
         public Form1()
         {
             InitializeComponent();
