@@ -204,7 +204,7 @@ namespace Bennytron_2000
                 #endregion
 
                 #region Calculo costos
-
+                //Esto es una modificacion
                 decimal costoModulos = _calculo.NumeroDeModulos * (decimal)_calculo.Modulo.Precio;
 
                 decimal costoMicroinversores = 0;
