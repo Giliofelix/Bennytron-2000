@@ -22,7 +22,7 @@ namespace Bennytron_2000
             _nucleo = nucleo;
             _calculo = calculo;
         }
-        // ...
+        
 
         private void frmMaterialElectrico_Load(object sender, EventArgs e)
         {
