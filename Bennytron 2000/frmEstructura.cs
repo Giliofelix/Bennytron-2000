@@ -12,6 +12,7 @@ namespace Bennytron_2000
 {
     public partial class frmEstructura : Form
     {
+        //Comentario
         public frmEstructura()
         {
             InitializeComponent();
