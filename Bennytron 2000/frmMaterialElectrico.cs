@@ -32,11 +32,11 @@ namespace Bennytron_2000
                 // 
                 //Encabezados:
                 //Capacidad (w) Voltaje (v) Corriente (A)   Eficiencia (%)  Costo unitario ($)
-                dgvModulosEt1.DataSource = _nucleo.Obtener("SELECT Modulos.Modulo, "
+                dgvModulosEt1.DataSource = _nucleo.Obtener("SELECT Modulos.Modulo as [Módulo], "
                     + "Modulos.Capacidad as [Capacidad (w)], "
                     + "Modulos.Voltaje as [Voltaje (v)], "
                     + "Modulos.Eficiencia as [Eficiencia (%)], "
-                    + "Modulos.Precio as [Cost unit($)] "
+                    + " Modulos.Precio as [Cost unit($)] "
                     + "FROM Modulos WHERE Modulos.Modulo = '" + _calculo.Modulo.Descripcion + "'");
 
                 dgvModulosEt1.AllowUserToAddRows = false;
@@ -99,7 +99,11 @@ namespace Bennytron_2000
                     totalMicros = (int)Math.Ceiling(capacidadTotal / (_calculo.Modulo.CapacidadW * modMicro));
 
                 lblN18.Text = totalMicros.ToString();
-                lblO18.Text = "3"; //PREGUNTAR porque 3?
+
+                // Max. Micro/bus
+                decimal maxMicroBus = 3; //PREGUNTAR porque 3? 
+                lblO18.Text = maxMicroBus.ToString();
+
 
                 string nombreCableCorrecto = "Cable boost wire APSystem CA 12\""; // TODO: Obtener cable de cables _AD donde Correcto = true
 
@@ -108,9 +112,9 @@ namespace Bennytron_2000
                 lblN20.Text = nombreCableCorrecto;
                 lblO20.Text = cableCorrecto.MaxV.ToString();
 
-                decimal ProtecionITM = 0; 
+                decimal ProtecionITM = 0;
 
-                if (_calculo.UsarMicroinversor) 
+                if (_calculo.UsarMicroinversor)
                     ProtecionITM = ((decimal)_calculo.Microinversor.CorrienteSalida * (decimal)3);
 
                 lblN22.Text = ProtecionITM.ToString();
@@ -126,7 +130,7 @@ namespace Bennytron_2000
                     if (protecionITMnecesarias < amperajes[i])
                     {
                         protecionITMrequerida = amperajes[i];
-                        break; 
+                        break;
                     }
                 }
 
@@ -145,7 +149,7 @@ namespace Bennytron_2000
 
                 lblN26.Text = polosProteccionITM.ToString();
 
-                decimal corrienteTotalSistema = protecionITMnecesarias * (totalMicros / 3);
+                decimal corrienteTotalSistema = protecionITMnecesarias * (totalMicros / maxMicroBus);
 
                 lblN28.Text = corrienteTotalSistema.ToString();
 
@@ -157,6 +161,118 @@ namespace Bennytron_2000
 
                 #region Programación Tablero metálico
 
+                lblN29.Text = _calculo.Encajonado;
+
+                // Poner valor correcto en lblN30.Text
+                // según corrienteTotalSistema
+                // buscar tablero metalico en tabla Tableros donde corriente maxima > corrienteTotalSistema
+                Tablero tablero = Tablero.BuscarPorCorriente(_nucleo, corrienteTotalSistema);
+
+                lblN30.Text = tablero.Descripcion;
+
+                lblN35.Text = "Espacios a utilizar / " + _calculo.Encajonado;
+                lblN37.Text = "Corriente ITM prin. + Prot. (A) / " + _calculo.Encajonado;
+                lblO29.Text = "Cantidad " + _calculo.Encajonado + "(#)";
+                lblO31.Text = "Corriente / " + _calculo.Encajonado + "(A)+Prot";
+                lblN31.Text = "Corriente máx. (A)";
+
+                //lblN28.Text = corrienteTotalSistema 
+
+                int cantidadEncajonado = (int)((Math.Ceiling(corrienteTotalSistema / tablero.CorrienteMaxima) == 0) ? 0 : Math.Ceiling(corrienteTotalSistema / tablero.CorrienteMaxima));
+                lblO30.Text = cantidadEncajonado.ToString();
+
+                lblN32.Text = tablero.CorrienteMaxima.ToString();
+                lblO32.Text = Math.Ceiling(corrienteTotalSistema / cantidadEncajonado).ToString();
+                lblN34.Text = ((polosProteccionITM == 2) ? cantidadITMnecesarias * 2 : cantidadITMnecesarias).ToString(); // =SI(N26=2,O24*N26,O24)
+
+                int espaciosUtilizar = (int)Math.Round((decimal)cantidadITMnecesarias / (decimal)cantidadEncajonado);
+
+                if (espaciosUtilizar == 0)
+                    espaciosUtilizar = 2;
+
+                if (espaciosUtilizar % 2 != 0)
+                    espaciosUtilizar++;
+
+                lblN36.Text = espaciosUtilizar.ToString();
+
+                //Corriente ITM prin. + Prot. (A) / Gabinete metálico
+                //= SI(O26 = "Monofásico 220v", (REDONDEAR.MAS(((((I20 * O18 * N36)) / (220 * 1)) * 1.25), 0)), (REDONDEAR.MAS(((((I20 * O18 * N36)) / (220 * 1 * RAIZ(3))) * 1.25), 0)))
+
+                decimal corrienteITMprinprotencajonado = (lblO26.Text == "Monofásico 220v") ?
+                    Math.Ceiling(((_calculo.Microinversor.CapacidadMaxModulo * maxMicroBus * espaciosUtilizar)) / ((decimal)220 * (decimal)1) * (decimal)1.25) :
+                    Math.Ceiling(((_calculo.Microinversor.CapacidadMaxModulo * maxMicroBus * espaciosUtilizar)) / ((decimal)220 * (decimal)1 * (decimal)Math.Sqrt((double)3)) * (decimal)1.25);
+                lblN38.Text = corrienteITMprinprotencajonado.ToString();
+
+                //=(N36*O30)-O24
+                lblO36.Text = ((corrienteITMprinprotencajonado * cantidadEncajonado) - cantidadITMnecesarias).ToString();
+
+                // ITM principal a utilizar
+                int ITMprincipalautilizar = 0;
+
+                for (int i = 0; i < 21; i++)
+                {
+                    if (corrienteITMprinprotencajonado < amperajes[i])
+                    {
+                        ITMprincipalautilizar = amperajes[i];
+                        break;
+                    }
+                }
+
+                lblO38.Text = ITMprincipalautilizar.ToString();
+
+                // Cap. nominal ITM x Factor Temp. (A)
+                /*
+                 =SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E341, 'BD y criterio'!E341,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E342, 'BD y criterio'!E342,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E343, 'BD y criterio'!E343,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E344, 'BD y criterio'!E344,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E345, 'BD y criterio'!E345,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E346, 'BD y criterio'!E346,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E347, 'BD y criterio'!E347,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E348, 'BD y criterio'!E348,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E349, 'BD y criterio'!E349,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E350, 'BD y criterio'!E350,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E351, 'BD y criterio'!E351,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E352, 'BD y criterio'!E352,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E353, 'BD y criterio'!E353,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E354, 'BD y criterio'!E354,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E355, 'BD y criterio'!E355,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E356, 'BD y criterio'!E356,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E357, 'BD y criterio'!E357,
+                  SI( O38/ (BUSCARV(C17,'BD y criterio'!A362:B371,2,FALSO)) <= 'BD y criterio'!E358, 'BD y criterio'!E358))))))))))))))))))
+                 */
+
+                decimal buscar = ITMprincipalautilizar / _calculo.TemperaturaAmbiente.FactorCorreccion;
+
+                // De E341 hacia abajo
+                DataTable dtCablesAC = _nucleo.Obtener("SELECT CABLE, CORRIENTE_MAX_75 FROM CABLES_AC WHERE NOT CORRECTO ORDER BY CORRIENTE_MAX_75 ASC;  ");
+
+
+                //Cap. nominal ITM
+                int capNominalITM = 0;
+
+                string cableAC = "";
+
+                foreach(DataRow dr in dtCablesAC.Rows)
+                {
+                    if (buscar < int.Parse(dr[1].ToString()))
+                    {
+                        capNominalITM = int.Parse(dr[1].ToString());
+                        cableAC = dr[0].ToString();
+                        break;
+                    }
+                }
+
+                lblN40.Text = capNominalITM.ToString();
+
+                // CableAC
+                lblN42.Text = cableAC;
+
+                // Corriente Max. cable AC (A)
+                lblO40.Text = "";
+
+                // Calibre (AWG/kcmil)
+                lblO42.Text = "";
                 #endregion
 
                 #region Llenado de grit de cableado y protección Et2
@@ -169,7 +285,7 @@ namespace Bennytron_2000
                 drEt2[2] = cableCorrecto.CorrienteMax75.ToString(); // 5 campo
                 drEt2[3] = "0";
                 drEt2[4] = "0";
-                drEt2[5] = cableCorrecto.Costo.ToString("$ 0.00"); // J339 BD y criterio
+                drEt2[5] = cableCorrecto.Costo.ToString("N"); // J339 BD y criterio
                 dtEt2.Rows.Add(drEt2);
 
                 drEt2 = dtEt2.NewRow();
@@ -178,19 +294,20 @@ namespace Bennytron_2000
                 drEt2[2] = lblN24.Text;
                 drEt2[3] = lblO24.Text;
                 drEt2[4] = "";
-                drEt2[5] = Calculo.PrecioProteccionITM(lblN21.Text);
+                drEt2[5] = Calculo.PrecioProteccionITM(lblN21.Text).ToString("N");
                 dtEt2.Rows.Add(drEt2);
 
-                Tablero tableroMetalico = new Tablero(_nucleo, lblN30.Text);
+
+                //Tablero tableroMetalico = new Tablero(_nucleo, lblN30.Text);
 
                 drEt2 = dtEt2.NewRow();
-                drEt2[0] = lblN30.Text;  // "Tablero metalico 225"; 
+                drEt2[0] = tablero.Descripcion;  // N30 "Tablero metalico 225"; 
                 drEt2[1] = "0";
-                drEt2[2] = tableroMetalico.CorrienteMaxima;
-                drEt2[3] = lblO30.Text;
+                drEt2[2] = tablero.CorrienteMaxima;
+                drEt2[3] = lblO30.Text; // ? llenar region Programación Tablero metálico primero
                 drEt2[4] = "";
-                drEt2[5] = tableroMetalico.Costo;
-                dtEt2.Rows.Add(drEt2); 
+                drEt2[5] = tablero.Costo.ToString("N");
+                dtEt2.Rows.Add(drEt2);
 
                 drEt2 = dtEt2.NewRow();
                 drEt2[0] = "ITM principal " + lblO38.Text;  //"ITM principal 15"; 
@@ -199,7 +316,7 @@ namespace Bennytron_2000
                 drEt2[3] = lblO30.Text;
                 drEt2[4] = "0";
                 drEt2[5] = "0";
-                drEt2[5] = Calculo.PrecioProteccionITM("ITM principal " + lblO38.Text);
+                drEt2[5] = Calculo.PrecioProteccionITM("ITM principal " + lblO38.Text).ToString("N");
                 dtEt2.Rows.Add(drEt2);
 
                 dgvSubEt2.DataSource = dtEt2;

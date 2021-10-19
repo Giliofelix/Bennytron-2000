@@ -20,10 +20,11 @@ namespace Bennytron_2000
 
         private string _tipoInstalacion;
         private string _encajonado;
-        private string _temperaturaAmbiente;
+        private Temperatura _temperaturaAmbiente;
         private string _transformador;
 
-        public Calculo(string modulo, int cantidadModulos, bool usarMicroinversor, string microInversor, string inversor, string tipoInstalacion, string encajonado, string temperaturaAmbiente, string transformador)
+        public Calculo(string modulo, int cantidadModulos, bool usarMicroinversor, 
+            string microInversor, string inversor, string tipoInstalacion, string encajonado, string temperaturaAmbiente, string transformador)
         {
             _nucleo = Generales.Nucleo;
 
@@ -50,7 +51,7 @@ namespace Bennytron_2000
 
             _tipoInstalacion = tipoInstalacion;
             _encajonado = encajonado;
-            _temperaturaAmbiente = temperaturaAmbiente;
+            _temperaturaAmbiente = new Temperatura(_nucleo, temperaturaAmbiente);
             _transformador = transformador;
 
             // TODO: continuar...
@@ -102,9 +103,9 @@ namespace Bennytron_2000
             return (int)Math.Round(capacidadKw / (portenciaw / 1000), 0);
         }
 
-        public static string PrecioProteccionITM(string itm)
+        public static decimal PrecioProteccionITM(string itm)
         {
-            return "";
+            return 0;
         }
         #endregion
 
@@ -157,6 +158,21 @@ namespace Bennytron_2000
             }
         }
 
+        public string Encajonado
+        {
+            get
+            {
+                return _encajonado;
+            }
+        }
+
+        public Temperatura TemperaturaAmbiente
+        {
+            get
+            {
+                return _temperaturaAmbiente;
+            }
+        }
         #endregion
     }
 }

@@ -108,7 +108,7 @@ namespace Bennytron_2000
             this.lblO42 = new System.Windows.Forms.Label();
             this.lblO43 = new System.Windows.Forms.Label();
             this.lblO44 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblOtros = new System.Windows.Forms.Label();
             this.dgvModulosEt1 = new System.Windows.Forms.DataGridView();
             this.dgvEt2 = new System.Windows.Forms.DataGridView();
             this.dgvEt3 = new System.Windows.Forms.DataGridView();
@@ -118,10 +118,10 @@ namespace Bennytron_2000
             this.lblO10 = new System.Windows.Forms.Label();
             this.lblO27 = new System.Windows.Forms.Label();
             this.lblO28 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblO33 = new System.Windows.Forms.Label();
+            this.lblO34 = new System.Windows.Forms.Label();
+            this.lblO35 = new System.Windows.Forms.Label();
+            this.lblO36 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsSubEt1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubEt2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubEt3)).BeginInit();
@@ -478,7 +478,7 @@ namespace Bennytron_2000
             this.lblN29.Name = "lblN29";
             this.lblN29.Size = new System.Drawing.Size(157, 23);
             this.lblN29.TabIndex = 0;
-            this.lblN29.Text = "Tablero metélico";
+            this.lblN29.Text = "Tablero metálico";
             this.lblN29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblN31
@@ -488,7 +488,7 @@ namespace Bennytron_2000
             this.lblN31.Name = "lblN31";
             this.lblN31.Size = new System.Drawing.Size(157, 23);
             this.lblN31.TabIndex = 0;
-            this.lblN31.Text = "Corriente max. tab.";
+            this.lblN31.Text = "Corriente máx. tab.";
             this.lblN31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblN32
@@ -735,7 +735,7 @@ namespace Bennytron_2000
             this.lblO39.Name = "lblO39";
             this.lblO39.Size = new System.Drawing.Size(157, 23);
             this.lblO39.TabIndex = 0;
-            this.lblO39.Text = "Corriente Max. cable";
+            this.lblO39.Text = "Corriente máx. cable";
             this.lblO39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblO40
@@ -887,15 +887,15 @@ namespace Bennytron_2000
             this.lblO44.TabIndex = 0;
             this.lblO44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lblOtros
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(950, 564);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Otros";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOtros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOtros.Location = new System.Drawing.Point(950, 564);
+            this.lblOtros.Name = "lblOtros";
+            this.lblOtros.Size = new System.Drawing.Size(157, 23);
+            this.lblOtros.TabIndex = 0;
+            this.lblOtros.Text = "Otros";
+            this.lblOtros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvModulosEt1
             // 
@@ -970,7 +970,7 @@ namespace Bennytron_2000
             this.lblO27.Name = "lblO27";
             this.lblO27.Size = new System.Drawing.Size(157, 23);
             this.lblO27.TabIndex = 0;
-            this.lblO27.Text = "O9";
+            this.lblO27.Text = "O27";
             this.lblO27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblO27.Visible = false;
             // 
@@ -985,49 +985,49 @@ namespace Bennytron_2000
             this.lblO28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblO28.Visible = false;
             // 
-            // label8
+            // lblO33
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(950, 342);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 23);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "O9";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Visible = false;
+            this.lblO33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblO33.Location = new System.Drawing.Point(950, 342);
+            this.lblO33.Name = "lblO33";
+            this.lblO33.Size = new System.Drawing.Size(157, 23);
+            this.lblO33.TabIndex = 0;
+            this.lblO33.Text = "O33";
+            this.lblO33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblO33.Visible = false;
             // 
-            // label9
+            // lblO34
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(1113, 342);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 23);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "0";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Visible = false;
+            this.lblO34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblO34.Location = new System.Drawing.Point(1113, 342);
+            this.lblO34.Name = "lblO34";
+            this.lblO34.Size = new System.Drawing.Size(93, 23);
+            this.lblO34.TabIndex = 0;
+            this.lblO34.Text = "0";
+            this.lblO34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblO34.Visible = false;
             // 
-            // label10
+            // lblO35
             // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(950, 365);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(157, 23);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "O9";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Visible = false;
+            this.lblO35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblO35.Location = new System.Drawing.Point(950, 365);
+            this.lblO35.Name = "lblO35";
+            this.lblO35.Size = new System.Drawing.Size(157, 23);
+            this.lblO35.TabIndex = 0;
+            this.lblO35.Text = "O35";
+            this.lblO35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblO35.Visible = false;
             // 
-            // label11
+            // lblO36
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(1113, 365);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 23);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "0";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Visible = false;
+            this.lblO36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblO36.Location = new System.Drawing.Point(1113, 365);
+            this.lblO36.Name = "lblO36";
+            this.lblO36.Size = new System.Drawing.Size(93, 23);
+            this.lblO36.TabIndex = 0;
+            this.lblO36.Text = "0";
+            this.lblO36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblO36.Visible = false;
             // 
             // frmMaterialElectrico
             // 
@@ -1096,20 +1096,20 @@ namespace Bennytron_2000
             this.Controls.Add(this.lblN37);
             this.Controls.Add(this.lblN27);
             this.Controls.Add(this.lblN17);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblO36);
+            this.Controls.Add(this.lblO34);
             this.Controls.Add(this.lblO28);
             this.Controls.Add(this.lblO10);
             this.Controls.Add(this.lblO8);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblO35);
+            this.Controls.Add(this.lblO33);
             this.Controls.Add(this.lblO27);
             this.Controls.Add(this.lblO9);
             this.Controls.Add(this.lblO7);
             this.Controls.Add(this.lblN12);
             this.Controls.Add(this.lblN11);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblOtros);
             this.Controls.Add(this.lblP18);
             this.Controls.Add(this.lblP19);
             this.Controls.Add(this.lblN9);
@@ -1128,7 +1128,7 @@ namespace Bennytron_2000
             this.Controls.Add(this.lblB13);
             this.Controls.Add(this.label40);
             this.Name = "frmMaterialElectrico";
-            this.Text = "Material Eléctrico";
+            this.Text = "Material Eléctrico - BENNYTRON 2000 - AV Energie Sofware";
             this.Load += new System.EventHandler(this.frmMaterialElectrico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvsSubEt1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubEt2)).EndInit();
@@ -1221,7 +1221,7 @@ namespace Bennytron_2000
         private System.Windows.Forms.Label lblO42;
         private System.Windows.Forms.Label lblO43;
         private System.Windows.Forms.Label lblO44;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblOtros;
         private System.Windows.Forms.DataGridView dgvModulosEt1;
         private System.Windows.Forms.DataGridView dgvEt2;
         private System.Windows.Forms.DataGridView dgvEt3;
@@ -1231,9 +1231,9 @@ namespace Bennytron_2000
         private System.Windows.Forms.Label lblO10;
         private System.Windows.Forms.Label lblO27;
         private System.Windows.Forms.Label lblO28;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblO33;
+        private System.Windows.Forms.Label lblO34;
+        private System.Windows.Forms.Label lblO35;
+        private System.Windows.Forms.Label lblO36;
     }
 }

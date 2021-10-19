@@ -137,6 +137,13 @@ namespace Bennytron_2000
                 }
                 */
 
+                cmbTemperatura.Items.Clear();
+
+                foreach (DataRow dr in Temperatura.Temperaturas(_nucleo).Rows)
+                {
+                    cmbTemperatura.Items.Add(dr[1].ToString());
+                }
+
                 /*
                 cmbEncajonado.SelectedIndex = 0;
                 if (cmbMicroinversor.Items.Count > 0)

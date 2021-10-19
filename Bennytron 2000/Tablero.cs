@@ -36,6 +36,13 @@ namespace Bennytron_2000
         }
 
         #region Propiedades
+        public string Descripcion
+        {
+            get
+            {
+                return _tablero;
+            }
+        }
 
         public int Circuitos
         {
@@ -77,5 +84,14 @@ namespace Bennytron_2000
             }
         }
         #endregion
+
+        public static Tablero BuscarPorCorriente(Nucleo nucleo, decimal corriente)
+        {
+            System.Data.DataTable dt = nucleo.Obtener("SELECT Tablero_metalico FROM Tableros " 
+                + " WHERE CORRIENTE_MINIMA > " + corriente
+                + " AND CORRIENTE_MAXIMA > " + corriente + ";");
+
+            return new Tablero(nucleo, dt.Rows[0][0].ToString());
+        }
     }
 }
