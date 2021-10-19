@@ -252,28 +252,69 @@ namespace Bennytron_2000
                 //Cap. nominal ITM
                 int capNominalITM = 0;
 
-                string cableAC = "";
+                string nombreCableAC = "";
 
                 foreach(DataRow dr in dtCablesAC.Rows)
                 {
                     if (buscar < int.Parse(dr[1].ToString()))
                     {
                         capNominalITM = int.Parse(dr[1].ToString());
-                        cableAC = dr[0].ToString();
+                        nombreCableAC = dr[0].ToString();
+
                         break;
                     }
                 }
 
+                CableAC cableAC = new CableAC(_nucleo, nombreCableAC);
+
                 lblN40.Text = capNominalITM.ToString();
 
                 // CableAC
-                lblN42.Text = cableAC;
+                lblN42.Text = cableAC.Descripcion;
 
                 // Corriente Max. cable AC (A)
-                lblO40.Text = "";
+                lblO40.Text = cableAC.CorrienteMax75.ToString();
 
                 // Calibre (AWG/kcmil)
-                lblO42.Text = "";
+                lblO42.Text = cableAC.Calibre.ToString();
+
+                // Corriente ITM centro de carga + Prot.(A)
+                // =SI(O26="Monofásico 220v",(REDONDEAR.MAS(((((I20*N18))/(220*1))*1.25),0)),(REDONDEAR.MAS(((((I20*N18))/(220*1*RAIZ(3)))*1.25),0)))
+                /*decimal corrienteITMprinprotencajonado = (lblO26.Text == "Monofásico 220v") ?
+                    Math.Ceiling(((_calculo.Microinversor.CapacidadMaxModulo * maxMicroBus * espaciosUtilizar)) / ((decimal)220 * (decimal)1) * (decimal)1.25) :
+                    Math.Ceiling(((_calculo.Microinversor.CapacidadMaxModulo * maxMicroBus * espaciosUtilizar)) / ((decimal)220 * (decimal)1 * (decimal)Math.Sqrt((double)3)) * (decimal)1.25);*/
+                decimal corrienteITMcentrocargaprot = (lblO26.Text == "Monofásico 220v") ?
+                    Math.Ceiling(((_calculo.Microinversor.PotenciaSalida * maxMicroBus)) / ((decimal)220 * (decimal)1) * (decimal)1.25) :
+                    Math.Ceiling(((_calculo.Microinversor.PotenciaSalida * maxMicroBus)) / ((decimal)220 * (decimal)1 * (decimal)Math.Sqrt((double)3)) * (decimal)1.25);
+
+                lblN44.Text = corrienteITMcentrocargaprot.ToString();
+
+                // ITM centro de carga a utilizar 
+                /*
+                 =SI(N44<='BD y criterio'!I303,'BD y criterio'!I303,
+                  SI(N44<='BD y criterio'!I304,'BD y criterio'!I304,
+                  SI(N44<='BD y criterio'!I305,'BD y criterio'!I305,
+                  SI(N44<='BD y criterio'!I306,'BD y criterio'!I306,
+                  SI(N44<='BD y criterio'!I307,'BD y criterio'!I307,
+                  SI(N44<='BD y criterio'!I308,'BD y criterio'!I308,
+                  SI(N44<='BD y criterio'!I309,'BD y criterio'!I309,
+                  SI(N44<='BD y criterio'!I310,'BD y criterio'!I310,
+                  SI(N44<='BD y criterio'!I311,'BD y criterio'!I311,
+                  SI(N44<='BD y criterio'!I312,'BD y criterio'!I312,
+                  SI(N44<='BD y criterio'!I313,'BD y criterio'!I313,
+                  SI(N44<='BD y criterio'!I314,'BD y criterio'!I314,
+                  SI(N44<='BD y criterio'!I315,'BD y criterio'!I315,
+                  SI(N44<='BD y criterio'!I316,'BD y criterio'!I316,
+                  SI(N44<='BD y criterio'!I317,'BD y criterio'!I317,
+                  SI(N44<='BD y criterio'!I318,'BD y criterio'!I318,
+                  SI(N44<='BD y criterio'!I319,'BD y criterio'!I319,
+                  SI(N44<='BD y criterio'!I320,'BD y criterio'!I320,
+                  SI(N44<='BD y criterio'!I321,'BD y criterio'!I321,
+                  SI(N44<='BD y criterio'!I322,'BD y criterio'!I322,
+                  SI(N44<='BD y criterio'!I323,'BD y criterio'!I323,'BD y criterio'!I323)))))))))))))))))))))
+                 */
+                lblO44.Text = "";
+
                 #endregion
 
                 #region Llenado de grit de cableado y protección Et2
