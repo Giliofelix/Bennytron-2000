@@ -49,6 +49,7 @@
     <Compile Include="CableAC.cs" />
     <Compile Include="Cable.cs" />
     <Compile Include="Calculo.cs" />
+    <Compile Include="CentroCarga.cs" />
     <Compile Include="DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +73,12 @@
     <Compile Include="frmMaterialElectrico.Designer.cs">
       <DependentUpon>frmMaterialElectrico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTransferenciaEnergia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransferenciaEnergia.Designer.cs">
+      <DependentUpon>frmTransferenciaEnergia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generales.cs" />
     <Compile Include="Inversor.cs" />
     <Compile Include="ITMPrincipal.cs" />
@@ -91,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialElectrico.resx">
       <DependentUpon>frmMaterialElectrico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferenciaEnergia.resx">
+      <DependentUpon>frmTransferenciaEnergia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

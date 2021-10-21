@@ -13,7 +13,7 @@ namespace Bennytron_2000
     public partial class Form1 : Form
     {
         public Nucleo _nucleo;
-//Hola
+
         public Form1()
         {
             InitializeComponent();
@@ -48,13 +48,15 @@ namespace Bennytron_2000
 
                 decimal costoTotalMaterialElectrico = 0;
 
-                costoTotalMaterialElectrico = modulo.Precio * numeroModulos;
+                //costoTotalMaterialElectrico = modulo.Precio * numeroModulos;
 
+                Calculo calculo;
 
                 if (cmbUsarMicroinversor.SelectedIndex == 0 && cmbMicroinversor.SelectedIndex > -1)
                 {
                     //Microinversor
                     //MessageBox.Show("Indice selecionado en comboUsarMicro 0");
+                    /*
 
                     Microinversor micro = new Microinversor(_nucleo, cmbMicroinversor.SelectedItem.ToString());
 
@@ -64,7 +66,6 @@ namespace Bennytron_2000
 
                     decimal totalMicros = capacidadTotal / (modulo.CapacidadW * moduloMicro);
 
-                    /*
                     switch (cmbMicroinversor.SelectedItem.ToString())
                     {
                         case "APS YC600W":
@@ -77,15 +78,23 @@ namespace Bennytron_2000
                             costoTotalMaterialElectrico += 250.74 * totalMicros;
                             break;
                         default:
-                            throw new Exception("Microninversor incorrecto: " + cmbMicroinversor.SelectedItem.ToString());
-                    }*/
+                            throw new Exception("Microninversor in
+                    : " + cmbMicroinversor.SelectedItem.ToString());
+                    }
 
                     costoTotalMaterialElectrico += micro.Precio * totalMicros;
+                    */
+
+                    calculo = new Calculo(modulo.Descripcion, numeroModulos, (cmbUsarMicroinversor.SelectedIndex == 0),
+                        cmbMicroinversor.SelectedItem.ToString(),
+                        "", cmbTipoInstalacion.Text, cmbEncajonado.Text, cmbTemperatura.Text, cmbTransformador.Text);
+
+                    costoTotalMaterialElectrico = calculo.CostoElectrico;
                 }
 
                 lblMaterialElectrico.Text = costoTotalMaterialElectrico.ToString("#,#.00");
 
-                decimal granTotal = costoTotalMaterialElectrico;
+                decimal granTotal = costoTotalMaterialElectrico; // Sumar ferretero y estructural
 
                 lblGranTotal.Text = granTotal.ToString("#,#.00");
             }
@@ -233,6 +242,9 @@ namespace Bennytron_2000
         {
             try
             {
+                if (cmbMicroinversor.SelectedIndex < 0)
+                    throw new Exception("No ha selecionado un microinversor.");
+
                 frmMaterialElectrico frm = new frmMaterialElectrico(_nucleo, new Calculo(cmbModulo.Text, int.Parse(lblNoModulos.Text), (cmbUsarMicroinversor.SelectedIndex == 0),
                     cmbMicroinversor.Text, "", cmbTipoInstalacion.Text, cmbEncajonado.Text, cmbTemperatura.Text, cmbTransformador.Text));
                 frm.ShowDialog();
@@ -246,7 +258,7 @@ namespace Bennytron_2000
 
         private void btnMaterialEstructural_Click(object sender, EventArgs e)
         {
-            frmEstructura frm = new frmEstructura();
+            frmEstructura frm = new frmEstructura(_nucleo);
             frm.ShowDialog();
             frm.Dispose();
 

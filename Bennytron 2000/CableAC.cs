@@ -33,7 +33,7 @@ namespace Bennytron_2000
                 return;
             }
 
-            System.Data.DataTable dt = _nucleo.Obtener("SELECT Cable FROM CABLES_AC WHERE CORRECTO");
+            System.Data.DataTable dt = _nucleo.Obtener("SELECT * FROM CABLES_AC WHERE CORRECTO");
 
             _descipcion = dt.Rows[0]["Cable"].ToString();
             _calibre = decimal.Parse(dt.Rows[0]["Calibre"].ToString());

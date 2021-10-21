@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bennytron_2000
 {
-    class Tablero
+    public class Tablero
     {
         Nucleo _nucleo;
 
@@ -88,8 +88,11 @@ namespace Bennytron_2000
         public static Tablero BuscarPorCorriente(Nucleo nucleo, decimal corriente)
         {
             System.Data.DataTable dt = nucleo.Obtener("SELECT Tablero_metalico FROM Tableros " 
-                + " WHERE CORRIENTE_MINIMA > " + corriente
-                + " AND CORRIENTE_MAXIMA > " + corriente + ";");
+                + " WHERE CORRIENTE_MINIMA >= " + corriente
+                + " AND " + corriente + " < CORRIENTE_MAXIMA;");
+
+            if (dt.Rows.Count < 1)
+                throw new Exception("Corriente " + corriente + " excede la capacidad máxima de los tableros metálicos capturados.");
 
             return new Tablero(nucleo, dt.Rows[0][0].ToString());
         }
