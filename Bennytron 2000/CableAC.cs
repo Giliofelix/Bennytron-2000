@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Bennytron_2000
 {
-    public class CableAC : Cable
+    public class CableAC
     {
         Nucleo _nucleo;
-        string _descipcion;
+        string _descripcion;
+
+        decimal _calibre;
+        decimal _maxv;
 
         private int _corrienteMax60;
         private int _corrienteMax75;
@@ -23,7 +26,7 @@ namespace Bennytron_2000
 
         private bool _correcto;
 
-        public CableAC(Nucleo nucleo, bool cableCorrecto) : base("", 0, 0)
+        public CableAC(Nucleo nucleo, bool cableCorrecto) //: base("", 0, 0)
         {
             _nucleo = nucleo;
                 _correcto = cableCorrecto;
@@ -35,7 +38,7 @@ namespace Bennytron_2000
 
             System.Data.DataTable dt = _nucleo.Obtener("SELECT * FROM CABLES_AC WHERE CORRECTO");
 
-            _descipcion = dt.Rows[0]["Cable"].ToString();
+            _descripcion = dt.Rows[0]["Cable"].ToString();
             _calibre = decimal.Parse(dt.Rows[0]["Calibre"].ToString());
             _maxv = decimal.Parse(dt.Rows[0]["Max_v"].ToString());
             _corrienteMax60 = int.Parse(dt.Rows[0]["Corriente_max_60"].ToString());
@@ -50,10 +53,9 @@ namespace Bennytron_2000
         }
 
         public CableAC(Nucleo nucleo, string descripcion)
-            :base(descripcion, 0, 0)
         {
             _nucleo = nucleo;
-            _descipcion = descripcion;
+            _descripcion = descripcion;
 
             System.Data.DataTable dt = _nucleo.Obtener("SELECT * FROM CABLES_AC WHERE CABLE = '" + descripcion + "'");
 
@@ -69,6 +71,24 @@ namespace Bennytron_2000
             _costo = decimal.Parse(dt.Rows[0]["Costo"].ToString());
 
             _correcto = (dt.Rows[0]["Correcto"].ToString().ToLower() == "true");
+        }
+
+        #region Propiedades
+
+        public decimal Calibre
+        {
+            get
+            {
+                return _calibre;
+            }
+        }
+
+        public decimal MaxV
+        {
+            get
+            {
+                return _maxv;
+            }
         }
 
         public int CorrienteMax60
@@ -133,5 +153,14 @@ namespace Bennytron_2000
                 return _correcto;
             }
         }
+
+        public string Descripcion 
+        {
+            get
+            {
+                return _descripcion;
+            }
+        }
+        #endregion
     }
 }

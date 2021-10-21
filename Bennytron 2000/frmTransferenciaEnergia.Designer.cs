@@ -29,6 +29,7 @@ namespace Bennytron_2000
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransferenciaEnergia));
             this.lblN44 = new System.Windows.Forms.Label();
             this.lblN40 = new System.Windows.Forms.Label();
             this.lblN30 = new System.Windows.Forms.Label();
@@ -850,6 +851,7 @@ namespace Bennytron_2000
             this.Controls.Add(this.lblN8);
             this.Controls.Add(this.lblN7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTransferenciaEnergia";
             this.Text = "Transferencia de Energia";
             this.Load += new System.EventHandler(this.frmTransferenciaEnergia_Load);

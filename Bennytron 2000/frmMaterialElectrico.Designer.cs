@@ -29,6 +29,7 @@ namespace Bennytron_2000
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMaterialElectrico));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -327,6 +328,7 @@ namespace Bennytron_2000
             this.Controls.Add(this.lblB13);
             this.Controls.Add(this.label40);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMaterialElectrico";
             this.Text = "Material Eléctrico - BENNYTRON 2000 - AV Energie Sofware";
             this.Load += new System.EventHandler(this.frmMaterialElectrico_Load);

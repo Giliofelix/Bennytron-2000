@@ -29,6 +29,7 @@ namespace Bennytron_2000
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstructura));
             this.cmbTechoExistente = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@ namespace Bennytron_2000
             this.txtSegmentosPanel = new System.Windows.Forms.TextBox();
             this.lblMaterialFerretero = new System.Windows.Forms.Label();
             this.dgvMaterialFerretero = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtGradosInclinacion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialEstructural)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialFerretero)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +60,9 @@ namespace Bennytron_2000
             "Teja"});
             this.cmbTechoExistente.Location = new System.Drawing.Point(12, 79);
             this.cmbTechoExistente.Name = "cmbTechoExistente";
-            this.cmbTechoExistente.Size = new System.Drawing.Size(262, 21);
+            this.cmbTechoExistente.Size = new System.Drawing.Size(150, 21);
             this.cmbTechoExistente.TabIndex = 4;
-            this.cmbTechoExistente.Text = "Elija un opción...";
+            this.cmbTechoExistente.Text = "Concreto";
             this.cmbTechoExistente.SelectedIndexChanged += new System.EventHandler(this.cmbTechoExistente_SelectedIndexChanged);
             // 
             // label14
@@ -69,7 +72,7 @@ namespace Bennytron_2000
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(12, 53);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(262, 23);
+            this.label14.Size = new System.Drawing.Size(150, 23);
             this.label14.TabIndex = 3;
             this.label14.Text = "Techo existente";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,7 +84,7 @@ namespace Bennytron_2000
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 23);
+            this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Información sobre la instalación existente";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,7 +96,7 @@ namespace Bennytron_2000
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 23);
+            this.label2.Size = new System.Drawing.Size(150, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Segmentos (Panel)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,7 +108,7 @@ namespace Bennytron_2000
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 217);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(262, 23);
+            this.label3.Size = new System.Drawing.Size(150, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Anclaje";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,7 +120,7 @@ namespace Bennytron_2000
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 267);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(262, 23);
+            this.label4.Size = new System.Drawing.Size(150, 23);
             this.label4.TabIndex = 3;
             this.label4.Text = "Detalles del anclaje";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,7 +132,7 @@ namespace Bennytron_2000
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(262, 23);
+            this.label5.Size = new System.Drawing.Size(150, 23);
             this.label5.TabIndex = 3;
             this.label5.Text = "Detalles de la nueva instalación";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,11 +141,11 @@ namespace Bennytron_2000
             // 
             this.cmbAnclaje.FormattingEnabled = true;
             this.cmbAnclaje.Items.AddRange(new object[] {
-            "Microinversor",
-            "Inversor"});
+            "Mini riel",
+            "Riel (aluminio)"});
             this.cmbAnclaje.Location = new System.Drawing.Point(12, 243);
             this.cmbAnclaje.Name = "cmbAnclaje";
-            this.cmbAnclaje.Size = new System.Drawing.Size(262, 21);
+            this.cmbAnclaje.Size = new System.Drawing.Size(150, 21);
             this.cmbAnclaje.TabIndex = 4;
             this.cmbAnclaje.Text = "Mini riel";
             this.cmbAnclaje.SelectedIndexChanged += new System.EventHandler(this.cmbAnclaje_SelectedIndexChanged);
@@ -151,13 +154,13 @@ namespace Bennytron_2000
             // 
             this.cmbDetalleAnclaje.FormattingEnabled = true;
             this.cmbDetalleAnclaje.Items.AddRange(new object[] {
-            "Microinversor",
-            "Inversor"});
+            "Estructura alzada (Protea)",
+            "Estructura (varilla roscada)"});
             this.cmbDetalleAnclaje.Location = new System.Drawing.Point(12, 293);
             this.cmbDetalleAnclaje.Name = "cmbDetalleAnclaje";
-            this.cmbDetalleAnclaje.Size = new System.Drawing.Size(262, 21);
+            this.cmbDetalleAnclaje.Size = new System.Drawing.Size(150, 21);
             this.cmbDetalleAnclaje.TabIndex = 4;
-            this.cmbDetalleAnclaje.Text = "Lámina trapezoidal";
+            this.cmbDetalleAnclaje.Text = "Estructura alzada (Protea)";
             this.cmbDetalleAnclaje.SelectedIndexChanged += new System.EventHandler(this.cmbDetalleAnclaje_SelectedIndexChanged);
             // 
             // lblMaterialEstructural
@@ -165,26 +168,28 @@ namespace Bennytron_2000
             this.lblMaterialEstructural.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lblMaterialEstructural.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMaterialEstructural.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialEstructural.Location = new System.Drawing.Point(280, 9);
+            this.lblMaterialEstructural.Location = new System.Drawing.Point(168, 9);
             this.lblMaterialEstructural.Name = "lblMaterialEstructural";
-            this.lblMaterialEstructural.Size = new System.Drawing.Size(262, 41);
+            this.lblMaterialEstructural.Size = new System.Drawing.Size(450, 41);
             this.lblMaterialEstructural.TabIndex = 3;
             this.lblMaterialEstructural.Text = "Material estructural para Mini riel con Lámina trapezoidal";
             this.lblMaterialEstructural.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvMaterialEstructural
             // 
+            this.dgvMaterialEstructural.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvMaterialEstructural.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterialEstructural.Location = new System.Drawing.Point(280, 53);
+            this.dgvMaterialEstructural.Location = new System.Drawing.Point(168, 53);
             this.dgvMaterialEstructural.Name = "dgvMaterialEstructural";
-            this.dgvMaterialEstructural.Size = new System.Drawing.Size(262, 261);
+            this.dgvMaterialEstructural.Size = new System.Drawing.Size(450, 335);
             this.dgvMaterialEstructural.TabIndex = 7;
             // 
             // txtSegmentosPanel
             // 
             this.txtSegmentosPanel.Location = new System.Drawing.Point(12, 129);
             this.txtSegmentosPanel.Name = "txtSegmentosPanel";
-            this.txtSegmentosPanel.Size = new System.Drawing.Size(262, 20);
+            this.txtSegmentosPanel.Size = new System.Drawing.Size(150, 20);
             this.txtSegmentosPanel.TabIndex = 8;
             this.txtSegmentosPanel.Text = "1";
             this.txtSegmentosPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -195,26 +200,51 @@ namespace Bennytron_2000
             this.lblMaterialFerretero.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lblMaterialFerretero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMaterialFerretero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialFerretero.Location = new System.Drawing.Point(548, 9);
+            this.lblMaterialFerretero.Location = new System.Drawing.Point(624, 9);
             this.lblMaterialFerretero.Name = "lblMaterialFerretero";
-            this.lblMaterialFerretero.Size = new System.Drawing.Size(262, 41);
+            this.lblMaterialFerretero.Size = new System.Drawing.Size(450, 41);
             this.lblMaterialFerretero.TabIndex = 3;
             this.lblMaterialFerretero.Text = "Material ferretero para Mini riel con Lámina trapezoidal";
             this.lblMaterialFerretero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvMaterialFerretero
             // 
+            this.dgvMaterialFerretero.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvMaterialFerretero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterialFerretero.Location = new System.Drawing.Point(548, 53);
+            this.dgvMaterialFerretero.Location = new System.Drawing.Point(624, 53);
             this.dgvMaterialFerretero.Name = "dgvMaterialFerretero";
-            this.dgvMaterialFerretero.Size = new System.Drawing.Size(262, 261);
+            this.dgvMaterialFerretero.Size = new System.Drawing.Size(450, 335);
             this.dgvMaterialFerretero.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 317);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(150, 23);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Ángulo de inclinación (grados)";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtGradosInclinacion
+            // 
+            this.txtGradosInclinacion.Location = new System.Drawing.Point(12, 343);
+            this.txtGradosInclinacion.Name = "txtGradosInclinacion";
+            this.txtGradosInclinacion.Size = new System.Drawing.Size(150, 20);
+            this.txtGradosInclinacion.TabIndex = 8;
+            this.txtGradosInclinacion.Text = "5";
+            this.txtGradosInclinacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtGradosInclinacion.TextChanged += new System.EventHandler(this.txtSegmentosPanel_TextChanged);
             // 
             // frmEstructura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 331);
+            this.ClientSize = new System.Drawing.Size(1093, 411);
+            this.Controls.Add(this.txtGradosInclinacion);
             this.Controls.Add(this.txtSegmentosPanel);
             this.Controls.Add(this.dgvMaterialFerretero);
             this.Controls.Add(this.dgvMaterialEstructural);
@@ -226,9 +256,12 @@ namespace Bennytron_2000
             this.Controls.Add(this.lblMaterialFerretero);
             this.Controls.Add(this.lblMaterialEstructural);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label14);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(850, 450);
             this.Name = "frmEstructura";
             this.Text = "Estructural y Ferretero";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEstructura_FormClosing);
@@ -256,5 +289,7 @@ namespace Bennytron_2000
         private System.Windows.Forms.TextBox txtSegmentosPanel;
         private System.Windows.Forms.Label lblMaterialFerretero;
         private System.Windows.Forms.DataGridView dgvMaterialFerretero;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtGradosInclinacion;
     }
 }
