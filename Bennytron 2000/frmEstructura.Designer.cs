@@ -86,7 +86,7 @@ namespace Bennytron_2000
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Información sobre la instalación existente";
+            this.label1.Text = "Instalación existente";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -134,7 +134,7 @@ namespace Bennytron_2000
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 23);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Detalles de la nueva instalación";
+            this.label5.Text = "Nueva instalación";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmbAnclaje
@@ -177,6 +177,10 @@ namespace Bennytron_2000
             // 
             // dgvMaterialEstructural
             // 
+            this.dgvMaterialEstructural.AllowUserToAddRows = false;
+            this.dgvMaterialEstructural.AllowUserToDeleteRows = false;
+            this.dgvMaterialEstructural.AllowUserToOrderColumns = true;
+            this.dgvMaterialEstructural.AllowUserToResizeRows = false;
             this.dgvMaterialEstructural.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvMaterialEstructural.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -226,7 +230,7 @@ namespace Bennytron_2000
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 23);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Ángulo de inclinación (grados)";
+            this.label6.Text = "Inclinación (°)";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtGradosInclinacion
@@ -260,6 +264,7 @@ namespace Bennytron_2000
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label14);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(850, 450);
             this.Name = "frmEstructura";

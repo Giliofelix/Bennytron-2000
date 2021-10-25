@@ -31,7 +31,7 @@ namespace Bennytron_2000
                 #region TRANSFERENCIA DE ENERGÍA
                 
                 lblN8.Text = _calculo.CapacidadTotal.ToString();
-                lblO8.Text = Math.Floor(_calculo.CapacidadTotal * (decimal)1.1).ToString();
+                lblO8.Text = Math.Floor(_calculo.CapacidadTotal / (decimal)1.1).ToString();
                 
                 lblN10.Text = _calculo.ModMicro.ToString();
                 lblN12.Text = _calculo.Modulo.VoltajeV.ToString();
@@ -41,7 +41,7 @@ namespace Bennytron_2000
                 // Max. Micro/bus
                 lblO18.Text = _calculo.MaxMicroBus.ToString();
                 lblN20.Text = _calculo.CableCorrecto.Descripcion;
-                lblO20.Text = _calculo.CableCorrecto.MaxV.ToString();
+                lblO20.Text = _calculo.CableCorrecto.CorrienteMax75.ToString();
 
                 lblN22.Text = _calculo.ProtecionITM;
                 lblO22.Text = _calculo.ProtecionITMnecesarias.ToString();

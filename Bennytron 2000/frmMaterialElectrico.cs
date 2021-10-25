@@ -74,15 +74,15 @@ namespace Bennytron_2000
 
                 #region define las columnas
                 dtEt2.Columns.Add("Descripción", System.Type.GetType("System.String"));
-                dtEt2.Columns.Add("Max5 (v)", System.Type.GetType("System.String"));
-                dtEt2.Columns.Add("Max I (A)", System.Type.GetType("System.String"));
+                dtEt2.Columns.Add("Máx (v)", System.Type.GetType("System.String"));
+                dtEt2.Columns.Add("Máx I (A)", System.Type.GetType("System.String"));
                 dtEt2.Columns.Add("Cant (pzas)", System.Type.GetType("System.String"));
                 dtEt2.Columns.Add("Cant (mts)", System.Type.GetType("System.String"));
                 dtEt2.Columns.Add("Cost unit ($)", System.Type.GetType("System.String"));
 
                 dtEt3.Columns.Add("Descripción", System.Type.GetType("System.String"));
-                dtEt3.Columns.Add("Max5 (v)", System.Type.GetType("System.String"));
-                dtEt3.Columns.Add("Max I (A)", System.Type.GetType("System.String"));
+                dtEt3.Columns.Add("Máx (v)", System.Type.GetType("System.String"));
+                dtEt3.Columns.Add("Máx I (A)", System.Type.GetType("System.String"));
                 dtEt3.Columns.Add("Cant (pzas)", System.Type.GetType("System.String"));
                 dtEt3.Columns.Add("Cant (mts)", System.Type.GetType("System.String"));
                 dtEt3.Columns.Add("Cost unit ($)", System.Type.GetType("System.String"));

@@ -63,13 +63,18 @@ namespace Bennytron_2000
             dtFerretero.Columns.Add("Costo($)", System.Type.GetType("System.String"));
             #endregion
 
-           
             dgvMaterialEstructural.DataSource = dtEstructural;
-            dgvMaterialEstructural.Columns[0].Width = 110;
+            dgvMaterialEstructural.Columns[0].Width = 101;
+            dgvMaterialEstructural.Columns[1].Width = 101;
+            dgvMaterialEstructural.Columns[2].Width = 101;
+            dgvMaterialEstructural.Columns[3].Width = 101;
             dgvMaterialEstructural.AllowUserToAddRows = false;
 
             dgvMaterialFerretero.DataSource = dtFerretero;
-            dgvMaterialFerretero.Columns[0].Width = 110;
+            dgvMaterialFerretero.Columns[0].Width = 101;
+            dgvMaterialFerretero.Columns[1].Width = 101;
+            dgvMaterialFerretero.Columns[2].Width = 101;
+            dgvMaterialFerretero.Columns[3].Width = 101;
             dgvMaterialFerretero.AllowUserToAddRows = false;
             #endregion
         }

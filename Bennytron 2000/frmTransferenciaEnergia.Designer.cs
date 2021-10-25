@@ -498,7 +498,7 @@ namespace Bennytron_2000
             this.lblN19.Name = "lblN19";
             this.lblN19.Size = new System.Drawing.Size(200, 23);
             this.lblN19.TabIndex = 7;
-            this.lblN19.Text = "Corriente bus micro";
+            this.lblN19.Text = "Corriente bus micro (A)";
             this.lblN19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblO24

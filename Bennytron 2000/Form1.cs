@@ -294,7 +294,10 @@ namespace Bennytron_2000
             try
             {
                 _nucleo.ModificarParametro("txtNombreProyecto.Text", txtNombreProyecto.Text);
-                _nucleo.ModificarParametro("txtCapacidad.Text", txtCapacidad.Text);
+
+                if (!_nucleo.ModificarParametro("txtCapacidad.Text", txtCapacidad.Text))
+                    MessageBox.Show("El parámatro Capacidad no fue guardado.");
+
                 _nucleo.ModificarParametro("txtUbicacion.Text", txtUbicacion.Text);
 
                 _nucleo.ModificarParametro("cmbModulo.SelectedText", cmbModulo.SelectedItem.ToString());
