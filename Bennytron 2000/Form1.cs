@@ -13,6 +13,7 @@ namespace Bennytron_2000
     public partial class Form1 : Form
     {
         public Nucleo _nucleo;
+        public Calculo _calculo;
 
         public Form1()
         {
@@ -50,7 +51,7 @@ namespace Bennytron_2000
 
                 //costoTotalMaterialElectrico = modulo.Precio * numeroModulos;
 
-                Calculo calculo;
+                //Calculo calculo; usar el _calculo de la clase
 
                 if (cmbUsarMicroinversor.SelectedIndex == 0 && cmbMicroinversor.SelectedIndex > -1)
                 {
@@ -85,18 +86,18 @@ namespace Bennytron_2000
                     costoTotalMaterialElectrico += micro.Precio * totalMicros;
                     */
 
-                    calculo = new Calculo(modulo.Descripcion, numeroModulos, (cmbUsarMicroinversor.SelectedIndex == 0),
+                    _calculo = new Calculo(modulo.Descripcion, numeroModulos, (cmbUsarMicroinversor.SelectedIndex == 0),
                         cmbMicroinversor.SelectedItem.ToString(),
                         "", cmbTipoInstalacion.Text, cmbEncajonado.Text, cmbTemperatura.Text, cmbTransformador.Text);
 
-                    costoTotalMaterialElectrico = calculo.CostoElectrico;
+                    costoTotalMaterialElectrico = _calculo.CostoElectrico;
                 }
 
-                lblMaterialElectrico.Text = costoTotalMaterialElectrico.ToString("#,#.00");
+                lblMaterialElectrico.Text = costoTotalMaterialElectrico.ToString("#,0.00");
 
                 decimal granTotal = costoTotalMaterialElectrico; // Sumar ferretero y estructural
 
-                lblGranTotal.Text = granTotal.ToString("#,#.00");
+                lblGranTotal.Text = granTotal.ToString("#,0.00");
             }
             catch (Exception ex)
             {
@@ -242,11 +243,12 @@ namespace Bennytron_2000
         {
             try
             {
+                RecalcularCostos();
+
                 if (cmbMicroinversor.SelectedIndex < 0)
                     throw new Exception("No ha selecionado un microinversor.");
 
-                frmMaterialElectrico frm = new frmMaterialElectrico(_nucleo, new Calculo(cmbModulo.Text, int.Parse(lblNoModulos.Text), (cmbUsarMicroinversor.SelectedIndex == 0),
-                    cmbMicroinversor.Text, "", cmbTipoInstalacion.Text, cmbEncajonado.Text, cmbTemperatura.Text, cmbTransformador.Text));
+                frmMaterialElectrico frm = new frmMaterialElectrico(_nucleo, _calculo);
                 frm.ShowDialog();
                 frm.Dispose();
             }
@@ -258,7 +260,7 @@ namespace Bennytron_2000
 
         private void btnMaterialEstructural_Click(object sender, EventArgs e)
         {
-            frmEstructura frm = new frmEstructura(_nucleo);
+            frmEstructura frm = new frmEstructura(_nucleo, _calculo);
             frm.ShowDialog();
             frm.Dispose();
 
@@ -271,17 +273,7 @@ namespace Bennytron_2000
 
         private void btnGranTotal_Click(object sender, EventArgs e)
         {
-            Calculo calculo = new Calculo(cmbModulo.Text, 
-                int.Parse(lblNoModulos.Text),
-                (cmbUsarMicroinversor.SelectedIndex == 0), 
-                cmbMicroinversor.Text,
-                "",
-                cmbTipoInstalacion.Text,
-                cmbEncajonado.Text, 
-                cmbTemperatura.Text, 
-                cmbTransformador.Text);
-
-            MessageBox.Show("Desarrollo en proceso.");
+            MessageBox.Show("Desarrollo del detalle en proceso.");
         }
 
         private void cmbMicroinversor_SelectedIndexChanged(object sender, EventArgs e)

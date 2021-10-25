@@ -41,6 +41,7 @@ namespace Bennytron_2000
                     + "FROM Modulos WHERE Modulos.Modulo = '" + _calculo.Modulo.Descripcion + "'");
 
                 dgvModulosEt1.AllowUserToAddRows = false;
+                dgvModulosEt1.ReadOnly = true;
 
                 //
                 if (_calculo.UsarMicroinversor)
@@ -55,6 +56,7 @@ namespace Bennytron_2000
                         + " WHERE Microinversor = '" + _calculo.Microinversor.Descripcion + "'");
 
                     dgvEt2.AllowUserToAddRows = false;
+                    dgvEt2.ReadOnly = true;
                 }
                 else
                 {
@@ -138,6 +140,7 @@ namespace Bennytron_2000
                 dgvSubEt2.DataSource = dtEt2;
                 dgvSubEt2.Columns[0].Width = 110;
                 dgvSubEt2.AllowUserToAddRows = false;
+                dgvSubEt2.ReadOnly = true;
                 #endregion
 
                 #region Calculo costos
