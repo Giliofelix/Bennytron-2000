@@ -29,7 +29,7 @@ namespace Bennytron_2000
                 lblClasificacion.Text = "";
 
                 if (txtCapacidad.Text != "")
-                    lblClasificacion.Text = Calculo.Clasificacion(int.Parse(txtCapacidad.Text));
+                    lblClasificacion.Text = Calculo.Clasificacion(decimal.Parse(txtCapacidad.Text));
 
                 // Actualizar potencia
                 //lblPotencia.Text = Calculo.Potencia(cmbModulo.Text).ToString();
@@ -86,11 +86,20 @@ namespace Bennytron_2000
                     costoTotalMaterialElectrico += micro.Precio * totalMicros;
                     */
 
-                    _calculo = new Calculo(modulo.Descripcion, numeroModulos, (cmbUsarMicroinversor.SelectedIndex == 0),
+                    _calculo = new Calculo(modulo.Descripcion, numeroModulos, true,
                         cmbMicroinversor.SelectedItem.ToString(),
                         "", cmbTipoInstalacion.Text, cmbEncajonado.Text, cmbTemperatura.Text, cmbTransformador.Text);
 
                     costoTotalMaterialElectrico = _calculo.CostoElectrico;
+                }
+                else
+                {
+                    if (cmbUsarMicroinversor.SelectedIndex == 1)
+                    {
+                        _calculo = new Calculo(modulo.Descripcion, numeroModulos, false,
+                            "", cmbMicroinversor.SelectedItem.ToString(),
+                            cmbTipoInstalacion.Text, cmbEncajonado.Text, cmbTemperatura.Text, cmbTransformador.Text);
+                    }
                 }
 
                 lblMaterialElectrico.Text = costoTotalMaterialElectrico.ToString("#,0.00");
@@ -216,6 +225,27 @@ namespace Bennytron_2000
 
         private void cmbUsarMicroinversor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // llenar el combo según sea seleccionado inversor o microinversor
+
+            cmbMicroinversor.Items.Clear();
+
+            if (cmbUsarMicroinversor.SelectedIndex == 1)
+            {
+                foreach (DataRow dr in _nucleo.Obtener("SELECT INVERSOR FROM INVERSORES").Rows)
+                {
+                    cmbMicroinversor.Items.Add(dr[0].ToString());
+                }
+            }
+            else
+            {
+                foreach (Microinversor micro in _nucleo.ObtenerMicroinversores())
+                {
+                    cmbMicroinversor.Items.Add(micro.Descripcion);
+                }
+            }
+
+            cmbMicroinversor.SelectedIndex = 0;
+
             RecalcularCostos();
         }
 
@@ -273,7 +303,10 @@ namespace Bennytron_2000
 
         private void btnGranTotal_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Desarrollo del detalle en proceso.");
+            RecalcularCostos();
+
+            frmTotal frm = new frmTotal(_nucleo, _calculo);
+            frm.ShowDialog();
         }
 
         private void cmbMicroinversor_SelectedIndexChanged(object sender, EventArgs e)

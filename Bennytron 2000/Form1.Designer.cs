@@ -52,12 +52,10 @@ namespace Bennytron_2000
             this.cmbUsarMicroinversor = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbTipoInstalacion = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.cmbEncajonado = new System.Windows.Forms.ComboBox();
             this.cmbTemperatura = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cmbTransformador = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -239,21 +237,21 @@ namespace Bennytron_2000
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label13.Location = new System.Drawing.Point(299, 9);
+            this.label13.Location = new System.Drawing.Point(298, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(114, 23);
+            this.label13.Size = new System.Drawing.Size(244, 23);
             this.label13.TabIndex = 0;
             this.label13.Text = "2000";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(165, 9);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(16, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(137, 23);
+            this.label12.Size = new System.Drawing.Size(288, 23);
             this.label12.TabIndex = 0;
             this.label12.Text = "BENNYTRON";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -319,24 +317,12 @@ namespace Bennytron_2000
             this.cmbTipoInstalacion.Text = "Monofásico";
             this.cmbTipoInstalacion.SelectedIndexChanged += new System.EventHandler(this.cmbTipoInstalacion_SelectedIndexChanged);
             // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(414, 308);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(128, 23);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "(Pendiente)";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label18
             // 
             this.label18.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(146, 308);
+            this.label18.Location = new System.Drawing.Point(280, 308);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(262, 23);
             this.label18.TabIndex = 0;
@@ -350,7 +336,7 @@ namespace Bennytron_2000
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(12, 308);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(128, 23);
+            this.label19.Size = new System.Drawing.Size(262, 23);
             this.label19.TabIndex = 0;
             this.label19.Text = "Encajonado";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,7 +350,7 @@ namespace Bennytron_2000
             "Gabinete metálico"});
             this.cmbEncajonado.Location = new System.Drawing.Point(12, 334);
             this.cmbEncajonado.Name = "cmbEncajonado";
-            this.cmbEncajonado.Size = new System.Drawing.Size(128, 21);
+            this.cmbEncajonado.Size = new System.Drawing.Size(262, 21);
             this.cmbEncajonado.TabIndex = 7;
             this.cmbEncajonado.Text = "Caja mistral";
             this.cmbEncajonado.SelectedIndexChanged += new System.EventHandler(this.cmbEncajonado_SelectedIndexChanged);
@@ -383,20 +369,12 @@ namespace Bennytron_2000
             "56° - 60°",
             "61° - 70°",
             "71° - 80°"});
-            this.cmbTemperatura.Location = new System.Drawing.Point(146, 334);
+            this.cmbTemperatura.Location = new System.Drawing.Point(280, 334);
             this.cmbTemperatura.Name = "cmbTemperatura";
             this.cmbTemperatura.Size = new System.Drawing.Size(262, 21);
             this.cmbTemperatura.TabIndex = 8;
             this.cmbTemperatura.Text = "21° - 25°";
             this.cmbTemperatura.SelectedIndexChanged += new System.EventHandler(this.cmbTemperatura_SelectedIndexChanged);
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(414, 334);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(128, 21);
-            this.comboBox7.TabIndex = 9;
             // 
             // label20
             // 
@@ -586,7 +564,6 @@ namespace Bennytron_2000
             this.Controls.Add(this.btnMaterialElectrico);
             this.Controls.Add(this.cmbTransformador);
             this.Controls.Add(this.cmbTipoInstalacion);
-            this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.cmbTemperatura);
             this.Controls.Add(this.cmbEncajonado);
             this.Controls.Add(this.cmbMicroinversor);
@@ -614,7 +591,6 @@ namespace Bennytron_2000
             this.Controls.Add(this.lblClasificacion);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label15);
@@ -662,12 +638,10 @@ namespace Bennytron_2000
         private System.Windows.Forms.ComboBox cmbUsarMicroinversor;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmbTipoInstalacion;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cmbEncajonado;
         private System.Windows.Forms.ComboBox cmbTemperatura;
-        private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cmbTransformador;
         private System.Windows.Forms.Label label21;

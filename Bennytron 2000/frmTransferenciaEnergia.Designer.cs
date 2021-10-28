@@ -106,7 +106,7 @@ namespace Bennytron_2000
             this.lblN44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN44.Location = new System.Drawing.Point(220, 380);
             this.lblN44.Name = "lblN44";
-            this.lblN44.Size = new System.Drawing.Size(160, 23);
+            this.lblN44.Size = new System.Drawing.Size(180, 23);
             this.lblN44.TabIndex = 1;
             this.lblN44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -115,7 +115,7 @@ namespace Bennytron_2000
             this.lblN40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN40.Location = new System.Drawing.Point(220, 334);
             this.lblN40.Name = "lblN40";
-            this.lblN40.Size = new System.Drawing.Size(160, 23);
+            this.lblN40.Size = new System.Drawing.Size(180, 23);
             this.lblN40.TabIndex = 37;
             this.lblN40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -124,7 +124,7 @@ namespace Bennytron_2000
             this.lblN30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN30.Location = new System.Drawing.Point(220, 219);
             this.lblN30.Name = "lblN30";
-            this.lblN30.Size = new System.Drawing.Size(160, 23);
+            this.lblN30.Size = new System.Drawing.Size(180, 23);
             this.lblN30.TabIndex = 38;
             this.lblN30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -133,7 +133,7 @@ namespace Bennytron_2000
             this.lblN20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN20.Location = new System.Drawing.Point(220, 104);
             this.lblN20.Name = "lblN20";
-            this.lblN20.Size = new System.Drawing.Size(160, 23);
+            this.lblN20.Size = new System.Drawing.Size(180, 23);
             this.lblN20.TabIndex = 39;
             this.lblN20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -142,7 +142,7 @@ namespace Bennytron_2000
             this.lblO26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO26.Location = new System.Drawing.Point(612, 173);
             this.lblO26.Name = "lblO26";
-            this.lblO26.Size = new System.Drawing.Size(160, 23);
+            this.lblO26.Size = new System.Drawing.Size(180, 23);
             this.lblO26.TabIndex = 40;
             this.lblO26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -151,7 +151,7 @@ namespace Bennytron_2000
             this.lblO12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO12.Location = new System.Drawing.Point(612, 55);
             this.lblO12.Name = "lblO12";
-            this.lblO12.Size = new System.Drawing.Size(160, 23);
+            this.lblO12.Size = new System.Drawing.Size(180, 23);
             this.lblO12.TabIndex = 41;
             this.lblO12.Text = "0.0";
             this.lblO12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,7 +171,7 @@ namespace Bennytron_2000
             this.lblO44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO44.Location = new System.Drawing.Point(612, 380);
             this.lblO44.Name = "lblO44";
-            this.lblO44.Size = new System.Drawing.Size(160, 23);
+            this.lblO44.Size = new System.Drawing.Size(180, 23);
             this.lblO44.TabIndex = 43;
             this.lblO44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -180,7 +180,7 @@ namespace Bennytron_2000
             this.lblO40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO40.Location = new System.Drawing.Point(612, 334);
             this.lblO40.Name = "lblO40";
-            this.lblO40.Size = new System.Drawing.Size(160, 23);
+            this.lblO40.Size = new System.Drawing.Size(180, 23);
             this.lblO40.TabIndex = 44;
             this.lblO40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -189,7 +189,7 @@ namespace Bennytron_2000
             this.lblO32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO32.Location = new System.Drawing.Point(612, 242);
             this.lblO32.Name = "lblO32";
-            this.lblO32.Size = new System.Drawing.Size(160, 23);
+            this.lblO32.Size = new System.Drawing.Size(180, 23);
             this.lblO32.TabIndex = 45;
             this.lblO32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -198,7 +198,7 @@ namespace Bennytron_2000
             this.lblO22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO22.Location = new System.Drawing.Point(612, 127);
             this.lblO22.Name = "lblO22";
-            this.lblO22.Size = new System.Drawing.Size(160, 23);
+            this.lblO22.Size = new System.Drawing.Size(180, 23);
             this.lblO22.TabIndex = 46;
             this.lblO22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -207,7 +207,7 @@ namespace Bennytron_2000
             this.lblN36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN36.Location = new System.Drawing.Point(220, 288);
             this.lblN36.Name = "lblN36";
-            this.lblN36.Size = new System.Drawing.Size(160, 23);
+            this.lblN36.Size = new System.Drawing.Size(180, 23);
             this.lblN36.TabIndex = 47;
             this.lblN36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -216,7 +216,7 @@ namespace Bennytron_2000
             this.lblN26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN26.Location = new System.Drawing.Point(220, 173);
             this.lblN26.Name = "lblN26";
-            this.lblN26.Size = new System.Drawing.Size(160, 23);
+            this.lblN26.Size = new System.Drawing.Size(180, 23);
             this.lblN26.TabIndex = 48;
             this.lblN26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -285,7 +285,7 @@ namespace Bennytron_2000
             this.lblO42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO42.Location = new System.Drawing.Point(612, 357);
             this.lblO42.Name = "lblO42";
-            this.lblO42.Size = new System.Drawing.Size(160, 23);
+            this.lblO42.Size = new System.Drawing.Size(180, 23);
             this.lblO42.TabIndex = 66;
             this.lblO42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -294,7 +294,7 @@ namespace Bennytron_2000
             this.lblO38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO38.Location = new System.Drawing.Point(612, 311);
             this.lblO38.Name = "lblO38";
-            this.lblO38.Size = new System.Drawing.Size(160, 23);
+            this.lblO38.Size = new System.Drawing.Size(180, 23);
             this.lblO38.TabIndex = 65;
             this.lblO38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -303,7 +303,7 @@ namespace Bennytron_2000
             this.lblO30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO30.Location = new System.Drawing.Point(612, 219);
             this.lblO30.Name = "lblO30";
-            this.lblO30.Size = new System.Drawing.Size(160, 23);
+            this.lblO30.Size = new System.Drawing.Size(180, 23);
             this.lblO30.TabIndex = 64;
             this.lblO30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -312,7 +312,7 @@ namespace Bennytron_2000
             this.lblO20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO20.Location = new System.Drawing.Point(612, 104);
             this.lblO20.Name = "lblO20";
-            this.lblO20.Size = new System.Drawing.Size(160, 23);
+            this.lblO20.Size = new System.Drawing.Size(180, 23);
             this.lblO20.TabIndex = 63;
             this.lblO20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -321,7 +321,7 @@ namespace Bennytron_2000
             this.lblN34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN34.Location = new System.Drawing.Point(220, 265);
             this.lblN34.Name = "lblN34";
-            this.lblN34.Size = new System.Drawing.Size(160, 23);
+            this.lblN34.Size = new System.Drawing.Size(180, 23);
             this.lblN34.TabIndex = 62;
             this.lblN34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -330,7 +330,7 @@ namespace Bennytron_2000
             this.lblN24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN24.Location = new System.Drawing.Point(220, 150);
             this.lblN24.Name = "lblN24";
-            this.lblN24.Size = new System.Drawing.Size(160, 23);
+            this.lblN24.Size = new System.Drawing.Size(180, 23);
             this.lblN24.TabIndex = 68;
             this.lblN24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -399,7 +399,7 @@ namespace Bennytron_2000
             this.lblO18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO18.Location = new System.Drawing.Point(612, 81);
             this.lblO18.Name = "lblO18";
-            this.lblO18.Size = new System.Drawing.Size(160, 23);
+            this.lblO18.Size = new System.Drawing.Size(180, 23);
             this.lblO18.TabIndex = 54;
             this.lblO18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -408,7 +408,7 @@ namespace Bennytron_2000
             this.lblN32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN32.Location = new System.Drawing.Point(220, 242);
             this.lblN32.Name = "lblN32";
-            this.lblN32.Size = new System.Drawing.Size(160, 23);
+            this.lblN32.Size = new System.Drawing.Size(180, 23);
             this.lblN32.TabIndex = 36;
             this.lblN32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -417,7 +417,7 @@ namespace Bennytron_2000
             this.lblN22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN22.Location = new System.Drawing.Point(220, 127);
             this.lblN22.Name = "lblN22";
-            this.lblN22.Size = new System.Drawing.Size(160, 23);
+            this.lblN22.Size = new System.Drawing.Size(180, 23);
             this.lblN22.TabIndex = 60;
             this.lblN22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -506,7 +506,7 @@ namespace Bennytron_2000
             this.lblO24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO24.Location = new System.Drawing.Point(612, 150);
             this.lblO24.Name = "lblO24";
-            this.lblO24.Size = new System.Drawing.Size(160, 23);
+            this.lblO24.Size = new System.Drawing.Size(180, 23);
             this.lblO24.TabIndex = 8;
             this.lblO24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -515,7 +515,7 @@ namespace Bennytron_2000
             this.lblN42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN42.Location = new System.Drawing.Point(220, 357);
             this.lblN42.Name = "lblN42";
-            this.lblN42.Size = new System.Drawing.Size(160, 23);
+            this.lblN42.Size = new System.Drawing.Size(180, 23);
             this.lblN42.TabIndex = 9;
             this.lblN42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -524,7 +524,7 @@ namespace Bennytron_2000
             this.lblN38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN38.Location = new System.Drawing.Point(220, 311);
             this.lblN38.Name = "lblN38";
-            this.lblN38.Size = new System.Drawing.Size(160, 23);
+            this.lblN38.Size = new System.Drawing.Size(180, 23);
             this.lblN38.TabIndex = 10;
             this.lblN38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -533,7 +533,7 @@ namespace Bennytron_2000
             this.lblN28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN28.Location = new System.Drawing.Point(220, 196);
             this.lblN28.Name = "lblN28";
-            this.lblN28.Size = new System.Drawing.Size(160, 23);
+            this.lblN28.Size = new System.Drawing.Size(180, 23);
             this.lblN28.TabIndex = 11;
             this.lblN28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -542,7 +542,7 @@ namespace Bennytron_2000
             this.lblN18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN18.Location = new System.Drawing.Point(220, 81);
             this.lblN18.Name = "lblN18";
-            this.lblN18.Size = new System.Drawing.Size(160, 23);
+            this.lblN18.Size = new System.Drawing.Size(180, 23);
             this.lblN18.TabIndex = 12;
             this.lblN18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -601,7 +601,7 @@ namespace Bennytron_2000
             this.lblO36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO36.Location = new System.Drawing.Point(612, 288);
             this.lblO36.Name = "lblO36";
-            this.lblO36.Size = new System.Drawing.Size(160, 23);
+            this.lblO36.Size = new System.Drawing.Size(180, 23);
             this.lblO36.TabIndex = 18;
             this.lblO36.Text = "0";
             this.lblO36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -612,7 +612,7 @@ namespace Bennytron_2000
             this.lblO34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO34.Location = new System.Drawing.Point(612, 265);
             this.lblO34.Name = "lblO34";
-            this.lblO34.Size = new System.Drawing.Size(160, 23);
+            this.lblO34.Size = new System.Drawing.Size(180, 23);
             this.lblO34.TabIndex = 32;
             this.lblO34.Text = "0";
             this.lblO34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -623,7 +623,7 @@ namespace Bennytron_2000
             this.lblO28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO28.Location = new System.Drawing.Point(612, 196);
             this.lblO28.Name = "lblO28";
-            this.lblO28.Size = new System.Drawing.Size(160, 23);
+            this.lblO28.Size = new System.Drawing.Size(180, 23);
             this.lblO28.TabIndex = 31;
             this.lblO28.Text = "0";
             this.lblO28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -634,7 +634,7 @@ namespace Bennytron_2000
             this.lblO10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO10.Location = new System.Drawing.Point(612, 32);
             this.lblO10.Name = "lblO10";
-            this.lblO10.Size = new System.Drawing.Size(160, 23);
+            this.lblO10.Size = new System.Drawing.Size(180, 23);
             this.lblO10.TabIndex = 30;
             this.lblO10.Text = "0";
             this.lblO10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -645,7 +645,7 @@ namespace Bennytron_2000
             this.lblO8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblO8.Location = new System.Drawing.Point(612, 9);
             this.lblO8.Name = "lblO8";
-            this.lblO8.Size = new System.Drawing.Size(160, 23);
+            this.lblO8.Size = new System.Drawing.Size(180, 23);
             this.lblO8.TabIndex = 29;
             this.lblO8.Text = "0";
             this.lblO8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -709,7 +709,7 @@ namespace Bennytron_2000
             this.lblN12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN12.Location = new System.Drawing.Point(220, 55);
             this.lblN12.Name = "lblN12";
-            this.lblN12.Size = new System.Drawing.Size(160, 23);
+            this.lblN12.Size = new System.Drawing.Size(180, 23);
             this.lblN12.TabIndex = 23;
             this.lblN12.Text = "0.0";
             this.lblN12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -739,7 +739,7 @@ namespace Bennytron_2000
             this.lblN10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN10.Location = new System.Drawing.Point(220, 32);
             this.lblN10.Name = "lblN10";
-            this.lblN10.Size = new System.Drawing.Size(160, 23);
+            this.lblN10.Size = new System.Drawing.Size(180, 23);
             this.lblN10.TabIndex = 20;
             this.lblN10.Text = "0";
             this.lblN10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -749,7 +749,7 @@ namespace Bennytron_2000
             this.lblN8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblN8.Location = new System.Drawing.Point(220, 9);
             this.lblN8.Name = "lblN8";
-            this.lblN8.Size = new System.Drawing.Size(160, 23);
+            this.lblN8.Size = new System.Drawing.Size(180, 23);
             this.lblN8.TabIndex = 19;
             this.lblN8.Text = "0";
             this.lblN8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -767,7 +767,7 @@ namespace Bennytron_2000
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(685, 415);
+            this.btnAceptar.Location = new System.Drawing.Point(716, 415);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 70;
@@ -780,7 +780,7 @@ namespace Bennytron_2000
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 450);
+            this.ClientSize = new System.Drawing.Size(815, 450);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblN44);
             this.Controls.Add(this.lblN40);

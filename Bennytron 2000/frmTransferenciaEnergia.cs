@@ -29,10 +29,10 @@ namespace Bennytron_2000
                 _nucleo = Generales.Nucleo;
 
                 #region TRANSFERENCIA DE ENERGÍA
-                
+
                 lblN8.Text = _calculo.CapacidadTotal.ToString();
                 lblO8.Text = Math.Floor(_calculo.CapacidadTotal / (decimal)1.1).ToString();
-                
+
                 lblN10.Text = _calculo.ModMicro.ToString();
                 lblN12.Text = _calculo.Modulo.VoltajeV.ToString();
                 lblO12.Text = _calculo.Modulo.CorrienteIscA.ToString();
@@ -69,7 +69,7 @@ namespace Bennytron_2000
                 // Poner valor correcto en lblN30.Text
                 // según corrienteTotalSistema
                 // buscar tablero metalico en tabla Tableros donde corriente maxima > corrienteTotalSistema
-                
+
 
                 lblN30.Text = _calculo.Tablero.Descripcion;
 
@@ -96,7 +96,7 @@ namespace Bennytron_2000
                 lblO36.Text = ((_calculo.CorrienteITMPrinProtEncajonado * _calculo.CantidadEncajonado) - _calculo.CantidadITMNecesarias).ToString();
 
                 // ITM principal a utilizar
-                
+
 
                 lblO38.Text = _calculo.ITMPrincipalUtilizar.ToString();
 
@@ -144,18 +144,20 @@ namespace Bennytron_2000
                     }
                 }
 
-                CableAC cableAC = new CableAC(_nucleo, nombreCableAC);
-
                 lblN40.Text = capNominalITM.ToString();
+                lblN42.Text = nombreCableAC;
 
-                // CableAC
-                lblN42.Text = cableAC.Descripcion;
+                CableAC cableAC = null;
+                if (nombreCableAC != "")
+                {
+                    cableAC = new CableAC(_nucleo, nombreCableAC);
 
-                // Corriente Max. cable AC (A)
-                lblO40.Text = cableAC.CorrienteMax75.ToString();
+                    // Corriente Max. cable AC (A)
+                    lblO40.Text = cableAC.CorrienteMax75.ToString();
 
-                // Calibre (AWG/kcmil)
-                lblO42.Text = cableAC.Calibre.ToString();
+                    // Calibre (AWG/kcmil)
+                    lblO42.Text = cableAC.Calibre.ToString();
+                }
 
                 // Corriente ITM centro de carga + Prot.(A)
                 // =SI(O26="Monofásico 220v",(REDONDEAR.MAS(((((I20*N18))/(220*1))*1.25),0)),(REDONDEAR.MAS(((((I20*N18))/(220*1*RAIZ(3)))*1.25),0)))

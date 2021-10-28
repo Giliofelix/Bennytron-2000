@@ -36,7 +36,9 @@
     <ApplicationIcon>216569_b_bitcoin_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,6 +78,12 @@
     <Compile Include="frmMaterialElectrico.Designer.cs">
       <DependentUpon>frmMaterialElectrico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTotal.Designer.cs">
+      <DependentUpon>frmTotal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTransferenciaEnergia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialElectrico.resx">
       <DependentUpon>frmMaterialElectrico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTotal.resx">
+      <DependentUpon>frmTotal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTransferenciaEnergia.resx">
       <DependentUpon>frmTransferenciaEnergia.cs</DependentUpon>

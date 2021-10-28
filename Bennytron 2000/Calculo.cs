@@ -45,6 +45,7 @@ namespace Bennytron_2000
         decimal _importeTablero;
         decimal _costoModulos;
         decimal _costoMicroinversores;
+        decimal _costoInversores;
         decimal _costoElectrico;
         decimal _importeProtecionesITM;
 
@@ -124,9 +125,14 @@ namespace Bennytron_2000
             if (_espaciosUtilizar % 2 != 0)
                 _espaciosUtilizar++;
 
+            if (usarMicroinversor)
             _corrienteITMprinprotencajonado = (TipoInstalacion == "Monofásico" && Microinversor.VoltajeNominal == 220) ?
                     Math.Ceiling(((Microinversor.CapacidadMaxModulo * _maxMicroBus * _espaciosUtilizar)) / ((decimal)220 * (decimal)1) * (decimal)1.25) :
                     Math.Ceiling(((Microinversor.CapacidadMaxModulo * _maxMicroBus * _espaciosUtilizar)) / ((decimal)220 * (decimal)1 * (decimal)Math.Sqrt((double)3)) * (decimal)1.25);
+            else
+                _corrienteITMprinprotencajonado = (TipoInstalacion == "Monofásico") ?
+                    Math.Ceiling(((_inversor.Capacidad * _maxMicroBus * _espaciosUtilizar)) / ((decimal)220 * (decimal)1) * (decimal)1.25) :
+                    Math.Ceiling(((_inversor.Capacidad * _maxMicroBus * _espaciosUtilizar)) / ((decimal)220 * (decimal)1 * (decimal)Math.Sqrt((double)3)) * (decimal)1.25);
 
             _ITMprincipalautilizar = 0;
 
@@ -148,6 +154,8 @@ namespace Bennytron_2000
 
             if (_usarMicroinversor)
                 _costoMicroinversores = _totalMicros * (decimal)_microInversor.Precio;
+            else
+                _costoInversores = _inversor.Precio;
 
             // metros de calbe correcto por precio del cable correcto tampoco está en bennytron de excel
 
@@ -159,9 +167,9 @@ namespace Bennytron_2000
         }
 
         #region Estáticos
-        public static string Clasificacion(int capacidadKw)
+        public static string Clasificacion(decimal capacidadKw)
         {
-            int capacidadw = capacidadKw;
+            decimal capacidadw = capacidadKw;
 
             int C173 = 30, C174 = 250, C175 = 600;
 
@@ -206,8 +214,13 @@ namespace Bennytron_2000
 
         public static decimal PrecioProteccionITM(Nucleo nucleo, int amperajeitmprincipal)
         {
-            return decimal.Parse(nucleo.EjecutarEscalar("SELECT Costo FROM ITM_Principales "
-                + " WHERE AMPERAJE = " + amperajeitmprincipal + ";").ToString());
+            object result = nucleo.EjecutarEscalar("SELECT Costo FROM ITM_Principales "
+                + " WHERE AMPERAJE = " + amperajeitmprincipal + ";");
+
+            if (result != null)
+                return decimal.Parse(result.ToString());
+            else
+                return 0;
         }
         #endregion
 

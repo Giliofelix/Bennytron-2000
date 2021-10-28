@@ -88,7 +88,7 @@ namespace Bennytron_2000
         public static Tablero BuscarPorCorriente(Nucleo nucleo, decimal corriente)
         {
             System.Data.DataTable dt = nucleo.Obtener("SELECT Tablero_metalico FROM Tableros " 
-                + " WHERE CORRIENTE_MINIMA >= " + corriente
+                + " WHERE CORRIENTE_MINIMA <= " + corriente
                 + " AND " + corriente + " < CORRIENTE_MAXIMA;");
 
             if (dt.Rows.Count < 1)
