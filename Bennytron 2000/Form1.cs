@@ -177,6 +177,7 @@ namespace Bennytron_2000
                 txtNombreProyecto.Text = _nucleo.Parametro("txtNombreProyecto.Text");
                 txtCapacidad.Text = _nucleo.Parametro("txtCapacidad.Text");
                 txtUbicacion.Text = _nucleo.Parametro("txtUbicacion.Text");
+                /*
                 cmbModulo.Text = _nucleo.Parametro("cmbModulo.SelectedText");
                 cmbUsarMicroinversor.Text = _nucleo.Parametro("cmbUsarMicroinversor.SelectedText");
                 if (cmbUsarMicroinversor.Text == "Sí")
@@ -185,7 +186,15 @@ namespace Bennytron_2000
                 cmbTipoInstalacion.Text = _nucleo.Parametro("cmbTipoInstalacion.SelectedText");
                 cmbEncajonado.Text = _nucleo.Parametro("cmbEncajonado.SelectedText");
                 cmbTemperatura.Text = _nucleo.Parametro("cmbTemperatura.SelectedText");
-                cmbTransformador.Text = _nucleo.Parametro("cmbTransformador.SelectedText");
+                cmbTransformador.Text = _nucleo.Parametro("cmbTransformador.SelectedText");*/
+
+                cmbUsarMicroinversor.SelectedIndex = 0;
+                    cmbUsarMicroinversor.SelectedIndex = 0;
+                cmbMicroinversor.SelectedIndex = 0;
+                cmbTipoInstalacion.SelectedIndex = 0;
+                cmbEncajonado.SelectedIndex = 0;
+                cmbTemperatura.SelectedIndex = 0;
+                cmbTransformador.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -316,6 +325,9 @@ namespace Bennytron_2000
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            /*
+             * SE DESHABILITÓ ESTA PARTE YA QUE NO SE ESTABA REALIZANDO LA AFECTACIÓN EN LA BASE DE DATOS Y NO SE ENCONTRÓ LA CAUSA.
+             * 
             try
             {
                 _nucleo.ModificarParametro("txtNombreProyecto.Text", txtNombreProyecto.Text);
@@ -336,12 +348,40 @@ namespace Bennytron_2000
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ((Generales.MostrarStackTrace) ? ex.StackTrace : ""));
-            }
+            }*/
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            /* Abre una venbtana de búsuqeda, poniendo el nombre o ubicación y despliega lo que coinda. cargando el selecionado */
+
+            /*
+             * Copiado de: FormulariosRegistroVentas (eBox) 
+             * 
+            this.lblMensaje.Text = "";
+            CriterioBusqueda[] criterios = new CriterioBusqueda[3];
+            criterios[0] = new CriterioBusqueda("NOMBRE", "Artículo", "string");
+            criterios[1] = new CriterioBusqueda("PRECIO", "Precio", "decimal");
+            criterios[2] = new CriterioBusqueda("EXISTENCIA", "Existencia", "decimal");
+            frmBusqueda frm = new frmBusqueda(_nucleo, criterios, "ARTICULOS", "CODIGO");
+            frm.ShowDialog();
+            this.cmbArticulo.Text = frm.Resultado;
+            if (this.cmbArticulo.Text != "")
+                this.cmbArticulo_SelectedIndexChanged(sender, e);
+            else
+                this.txtNombreArticulo.Text = "";
+
+            */
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            /* ejecuta el proyecto.Guardar() */
         }
         #endregion
     }

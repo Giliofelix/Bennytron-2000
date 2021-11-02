@@ -60,7 +60,7 @@ namespace Bennytron_2000
             _numeroModulos = cantidadModulos;
 
             _usarMicroinversor = usarMicroinversor;
-            if (_usarMicroinversor)
+            if (this.UsarMicroinversor)
             {
                 _microInversor = new Microinversor(_nucleo, microInversor);
                 if (_microInversor == null)
@@ -82,8 +82,10 @@ namespace Bennytron_2000
 
             _cableACCorrecto = new CableAC(_nucleo, true);
 
-            if (UsarMicroinversor)
+            if (this.UsarMicroinversor)
                 _protecionITMvalor = ((decimal)_microInversor.CorrienteSalida * (decimal)3);
+            else
+                _protecionITMvalor = ((decimal)_inversor.Capacidad * (decimal)3);
 
             _protecionITMetiqueta = "Protecion ITM (A)";
 
@@ -145,14 +147,16 @@ namespace Bennytron_2000
                 }
             }
 
-            if (UsarMicroinversor)
+            if (this.UsarMicroinversor)
                 _polosProteccionITM = (Microinversor.VoltajeNominal == 440) ? 3 : ((Microinversor.VoltajeNominal == 220) ? 2 : 1);
+            else
+                _polosProteccionITM = (Inversor.ACVoltajeNominal == 440) ? 3 : ((Inversor.ACVoltajeNominal == 220) ? 2 : 1);
 
             _importeTablero = _cantidadEncajonado * _tablero.Costo;
 
             _costoModulos = _numeroModulos * _modulo.Precio;
 
-            if (_usarMicroinversor)
+            if (this.UsarMicroinversor)
                 _costoMicroinversores = _totalMicros * (decimal)_microInversor.Precio;
             else
                 _costoInversores = _inversor.Precio;

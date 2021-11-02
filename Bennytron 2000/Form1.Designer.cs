@@ -71,6 +71,8 @@ namespace Bennytron_2000
             this.btnMaterialEstructural = new System.Windows.Forms.Button();
             this.btnGranTotal = new System.Windows.Forms.Button();
             this.cmbMicroinversor = new System.Windows.Forms.ComboBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -554,11 +556,34 @@ namespace Bennytron_2000
             this.cmbMicroinversor.Text = "Modelo del microinversor";
             this.cmbMicroinversor.SelectedIndexChanged += new System.EventHandler(this.cmbMicroinversor_SelectedIndexChanged);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(467, 516);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 14;
+            this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::Bennytron_2000.Properties.Resources.buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(254, 42);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(23, 23);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 529);
+            this.ClientSize = new System.Drawing.Size(564, 551);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnGranTotal);
             this.Controls.Add(this.btnMaterialEstructural);
             this.Controls.Add(this.btnMaterialElectrico);
@@ -657,6 +682,8 @@ namespace Bennytron_2000
         private System.Windows.Forms.Button btnMaterialEstructural;
         private System.Windows.Forms.Button btnGranTotal;
         private System.Windows.Forms.ComboBox cmbMicroinversor;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 

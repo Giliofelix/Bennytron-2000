@@ -106,5 +106,17 @@ namespace Bennytron_2000
         {
             return this.EjecutarSentencia("UPDATE PARAMETROS SET VALOR = '" + valor + "' WHERE CLAVE = '" + clave + "'") > 0;
         }
+
+        #region Propiedades
+
+        public OleDbConnection Conexion
+        {
+            get
+            {
+                return _conexion;
+            }
+        }
+
+        #endregion
     }
 }
