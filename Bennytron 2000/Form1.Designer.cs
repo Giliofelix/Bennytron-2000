@@ -199,7 +199,6 @@ namespace Bennytron_2000
             this.label8.TabIndex = 0;
             this.label8.Text = "Potencia (w)";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -436,7 +435,6 @@ namespace Bennytron_2000
             this.label10.TabIndex = 0;
             this.label10.Text = "Material eléctrico";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Click += new System.EventHandler(this.label8_Click);
             // 
             // label11
             // 
@@ -449,7 +447,6 @@ namespace Bennytron_2000
             this.label11.TabIndex = 0;
             this.label11.Text = "Material estructural";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Click += new System.EventHandler(this.label8_Click);
             // 
             // label17
             // 
@@ -462,7 +459,6 @@ namespace Bennytron_2000
             this.label17.TabIndex = 0;
             this.label17.Text = "Material ferretero";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label17.Click += new System.EventHandler(this.label8_Click);
             // 
             // label22
             // 
@@ -475,7 +471,6 @@ namespace Bennytron_2000
             this.label22.TabIndex = 0;
             this.label22.Text = "Gran total";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label22.Click += new System.EventHandler(this.label8_Click);
             // 
             // lblMaterialElectrico
             // 
