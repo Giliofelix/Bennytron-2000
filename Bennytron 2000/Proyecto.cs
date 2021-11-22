@@ -127,6 +127,10 @@ namespace Bennytron_2000
             {
                 return _nombre;
             }
+            set
+            {
+                _nombre = value;
+            }
         }
 
         public int Capacidad
@@ -135,6 +139,10 @@ namespace Bennytron_2000
             {
                 return _capacidad;
             }
+            set
+            {
+                _capacidad = value;
+            }
         }
 
         public string Ubicacion
@@ -142,6 +150,10 @@ namespace Bennytron_2000
             get
             {
                 return _ubicacion;
+            }
+            set
+            {
+                _ubicacion = value;
             }
         }
 
@@ -152,6 +164,10 @@ namespace Bennytron_2000
             {
                 return _modulo;
             }
+            set
+            {
+                _modulo = value;
+            }
         }
 
         public bool UsarMicro
@@ -159,6 +175,10 @@ namespace Bennytron_2000
             get
             {
                 return _usarMicro;
+            }
+            set
+            {
+                _usarMicro = value;
             }
         }
 
@@ -168,6 +188,10 @@ namespace Bennytron_2000
             {
                 return _microinversor;
             }
+            set
+            {
+                _microinversor = value;
+            }
         }
 
         public Inversor Inversor
@@ -175,6 +199,10 @@ namespace Bennytron_2000
             get
             {
                 return _inversor;
+            }
+            set
+            {
+                _inversor = value;
             }
         }
 
@@ -184,6 +212,10 @@ namespace Bennytron_2000
             {
                 return _techoExistente;
             }
+            set
+            {
+                _techoExistente = value;
+            }
         }
 
         public int Segmentos
@@ -192,6 +224,10 @@ namespace Bennytron_2000
             {
                 return _segmentos;
             }
+            set
+            {
+                _segmentos = value;
+            }
         }
 
         public string Anclaje
@@ -199,6 +235,10 @@ namespace Bennytron_2000
             get
             {
                 return _anclaje;
+            }
+            set
+            {
+                _anclaje = value;
             }
         }
 

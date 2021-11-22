@@ -189,7 +189,7 @@ namespace Bennytron_2000
                 cmbTransformador.Text = _nucleo.Parametro("cmbTransformador.SelectedText");*/
 
                 cmbUsarMicroinversor.SelectedIndex = 0;
-                    cmbUsarMicroinversor.SelectedIndex = 0;
+                cmbUsarMicroinversor.SelectedIndex = 0;
                 cmbMicroinversor.SelectedIndex = 0;
                 cmbTipoInstalacion.SelectedIndex = 0;
                 cmbEncajonado.SelectedIndex = 0;
@@ -381,7 +381,21 @@ namespace Bennytron_2000
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            /* ejecuta el proyecto.Guardar() */
+            
+            Proyecto proyecto = new Proyecto(_nucleo, txtNombreProyecto.Text);
+
+            proyecto.Capacidad = int.Parse(txtCapacidad.Text);
+            proyecto.Ubicacion = txtUbicacion.Text;
+            proyecto.Modulo = _calculo.Modulo;
+            proyecto.Microinversor = _calculo.Microinversor;
+            proyecto.UsarMicro = _calculo.UsarMicroinversor;
+            
+            //proyecto.Anclaje = 
+            proyecto.Guardar();
+
+
+
+            proyecto.Guardar();
         }
         #endregion
     }
