@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bennytron_2000
 {
-    class CriterioBusqueda
+    public class CriterioBusqueda
     {
         public string Campo, Mostrar, Tipo;
 

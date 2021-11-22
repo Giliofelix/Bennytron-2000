@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Bennytron_2000
 {
-    class Proyecto
+    public class Proyecto
     {
         Nucleo _nucleo;
         string _nombre;
@@ -24,6 +24,7 @@ namespace Bennytron_2000
         string _detallesAnclaje;
         int _gradosInclinacion;
         bool _existe;
+        bool _guardado;
 
         public Proyecto(Nucleo nucleo, string nombre)
         {
@@ -35,6 +36,7 @@ namespace Bennytron_2000
             if (dt.Rows.Count > 0)
             {
                 _existe = true;
+                _guardado = true;
 
                 _capacidad = int.Parse(dt.Rows[0]["CAPACIDAD"].ToString());
                 _ubicacion = dt.Rows[0]["UBICACION"].ToString();
@@ -51,6 +53,7 @@ namespace Bennytron_2000
             else
             {
                 _existe = false;
+                _guardado = false;
             }
         }
 
@@ -116,6 +119,7 @@ namespace Bennytron_2000
             _nucleo.Conexion.Close();
 
             _existe = (r > 0);
+            _guardado = _existe;
             return _existe;
         }
 
@@ -127,6 +131,11 @@ namespace Bennytron_2000
             {
                 return _nombre;
             }
+            set
+            {
+                _nombre = value;
+                _guardado = false;
+            }
         }
 
         public int Capacidad
@@ -135,6 +144,11 @@ namespace Bennytron_2000
             {
                 return _capacidad;
             }
+            set
+            {
+                _capacidad = value;
+                _guardado = false;
+            }
         }
 
         public string Ubicacion
@@ -142,6 +156,11 @@ namespace Bennytron_2000
             get
             {
                 return _ubicacion;
+            }
+            set
+            {
+                _ubicacion = value;
+                _guardado = false;
             }
         }
 
@@ -152,6 +171,11 @@ namespace Bennytron_2000
             {
                 return _modulo;
             }
+            set
+            {
+                _modulo = value;
+                _guardado = false;
+            }
         }
 
         public bool UsarMicro
@@ -159,6 +183,11 @@ namespace Bennytron_2000
             get
             {
                 return _usarMicro;
+            }
+            set
+            {
+                _usarMicro = value;
+                _guardado = false;
             }
         }
 
@@ -168,6 +197,11 @@ namespace Bennytron_2000
             {
                 return _microinversor;
             }
+            set
+            {
+                _microinversor = value;
+                _guardado = false;
+            }
         }
 
         public Inversor Inversor
@@ -175,6 +209,11 @@ namespace Bennytron_2000
             get
             {
                 return _inversor;
+            }
+            set
+            {
+                _inversor = value;
+                _guardado = false;
             }
         }
 
@@ -184,6 +223,11 @@ namespace Bennytron_2000
             {
                 return _techoExistente;
             }
+            set
+            {
+                _techoExistente = value;
+                _guardado = false;
+            }
         }
 
         public int Segmentos
@@ -191,6 +235,11 @@ namespace Bennytron_2000
             get
             {
                 return _segmentos;
+            }
+            set
+            {
+                _segmentos = value;
+                _guardado = false;
             }
         }
 
@@ -200,6 +249,11 @@ namespace Bennytron_2000
             {
                 return _anclaje;
             }
+            set
+            {
+                _anclaje = value;
+                _guardado = false;
+            }
         }
 
         public string DetalleAnclaje
@@ -207,6 +261,11 @@ namespace Bennytron_2000
             get
             {
                 return _detallesAnclaje;
+            }
+            set
+            {
+                _detallesAnclaje = value;
+                _guardado = false;
             }
         }
 
@@ -216,8 +275,20 @@ namespace Bennytron_2000
             {
                 return _gradosInclinacion;
             }
+            set
+            {
+                _gradosInclinacion = value;
+                _guardado = false;
+            }
         }
 
+        public bool Guardado
+        {
+            get
+            {
+                return _guardado;
+            }
+        }
 
         #endregion
     }

@@ -14,6 +14,7 @@ namespace Bennytron_2000
     {
         public Nucleo _nucleo;
         public Calculo _calculo;
+        public Proyecto _proyecto;
 
         public Form1()
         {
@@ -195,6 +196,8 @@ namespace Bennytron_2000
                 cmbEncajonado.SelectedIndex = 0;
                 cmbTemperatura.SelectedIndex = 0;
                 cmbTransformador.SelectedIndex = 0;
+
+                _proyecto = new Proyecto(_nucleo, txtNombreProyecto.Text);
             }
             catch (Exception ex)
             {
@@ -202,16 +205,16 @@ namespace Bennytron_2000
             }
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txtCapacidad_TextChanged(object sender, EventArgs e)
         {
             // Actualizar número de módulos y clasificación
             try
             {
+                if (txtCapacidad.Text != "")
+                    _proyecto.Capacidad = int.Parse(txtCapacidad.Text);
+                else
+                    _proyecto.Capacidad = 0;
+
                 RecalcularCostos();
             }
             catch (Exception ex)
@@ -224,6 +227,8 @@ namespace Bennytron_2000
         {
             try
             {
+                _proyecto.Modulo = new Modulo(_nucleo, cmbModulo.SelectedItem.ToString());
+
                 RecalcularCostos();
             }
             catch (Exception ex)
@@ -325,30 +330,22 @@ namespace Bennytron_2000
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*
-             * SE DESHABILITÓ ESTA PARTE YA QUE NO SE ESTABA REALIZANDO LA AFECTACIÓN EN LA BASE DE DATOS Y NO SE ENCONTRÓ LA CAUSA.
-             * 
             try
             {
-                _nucleo.ModificarParametro("txtNombreProyecto.Text", txtNombreProyecto.Text);
+                if (!_proyecto.Guardado)
+                {
+                    DialogResult resultado = MessageBox.Show("¿Guardar cambios?", "Hay cambios no guardados...", MessageBoxButtons.YesNo);
 
-                if (!_nucleo.ModificarParametro("txtCapacidad.Text", txtCapacidad.Text))
-                    MessageBox.Show("El parámatro Capacidad no fue guardado.");
-
-                _nucleo.ModificarParametro("txtUbicacion.Text", txtUbicacion.Text);
-
-                _nucleo.ModificarParametro("cmbModulo.SelectedText", cmbModulo.SelectedItem.ToString());
-                _nucleo.ModificarParametro("cmbUsarMicroinversor.SelectedText", cmbUsarMicroinversor.SelectedItem.ToString());
-                _nucleo.ModificarParametro("cmbMicroinversor.SelectedText", cmbMicroinversor.SelectedItem.ToString());
-                _nucleo.ModificarParametro("cmbTipoInstalacion.SelectedText", cmbTipoInstalacion.SelectedItem.ToString());
-                _nucleo.ModificarParametro("cmbEncajonado.SelectedText", cmbEncajonado.SelectedItem.ToString());
-                _nucleo.ModificarParametro("cmbTemperatura.SelectedText", cmbTemperatura.SelectedItem.ToString());
-                _nucleo.ModificarParametro("cmbTransformador.SelectedText", cmbTransformador.SelectedItem.ToString());
+                    if (DialogResult.Yes == resultado)
+                    {
+                        _proyecto.Guardar();
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ((Generales.MostrarStackTrace) ? ex.StackTrace : ""));
-            }*/
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -377,10 +374,46 @@ namespace Bennytron_2000
                 this.txtNombreArticulo.Text = "";
 
             */
+
+            try
+            {
+
+                if (!_proyecto.Guardado)
+                {
+                    DialogResult resultado = MessageBox.Show("¿Guardar cambios?", "Hay cambios no guardados...", MessageBoxButtons.YesNo);
+
+                    if (DialogResult.Yes == resultado)
+                    {
+                        _proyecto.Guardar();
+                    }
+                }
+
+                CriterioBusqueda[] criterio = new CriterioBusqueda[2];
+                criterio[0] = new CriterioBusqueda("NOMBRE", "Nombre del proyecto", "string");
+                criterio[0] = new CriterioBusqueda("UBICACION", "Ubicación", "string");
+                frmBusqueda frm = new frmBusqueda(_nucleo, criterio, "PROYECTOS", "NOMBRE");
+                frm.ShowDialog();
+
+                //INSTANCIAR PYOYECTO
+                _proyecto = new Proyecto(_nucleo, frm.Resultado);
+                this.txtNombreProyecto.Text = _proyecto.Nombre;
+                this.txtCapacidad.Text = _proyecto.Capacidad.ToString();
+                this.txtUbicacion.Text = _proyecto.Ubicacion;
+
+                //ASIGANAR VALORSES de atributos A CAMPOS EN FORMULARIO Y VARIABLES
+                this.cmbModulo.SelectedItem = _proyecto.Modulo.Descripcion;
+                this.cmbMicroinversor.SelectedItem = _proyecto.Microinversor.Descripcion;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + (Generales.MostrarStackTrace ? ex.StackTrace : ""));
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            /* Actualizar propiedades con los datos capturados */
             /* ejecuta el proyecto.Guardar() */
         }
         #endregion

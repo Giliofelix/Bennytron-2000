@@ -67,6 +67,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusqueda.Designer.cs">
+      <DependentUpon>frmBusqueda.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEstructura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Temperatura.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusqueda.resx">
+      <DependentUpon>frmBusqueda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstructura.resx">
       <DependentUpon>frmEstructura.cs</DependentUpon>
